@@ -1,4 +1,4 @@
-package nickzim.Model;
+package nickzim.Model.DTO;
 
 public class FeedUrl {
 

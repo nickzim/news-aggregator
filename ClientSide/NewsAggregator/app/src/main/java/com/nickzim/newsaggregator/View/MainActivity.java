@@ -1,15 +1,15 @@
 package com.nickzim.newsaggregator.View;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.nickzim.newsaggregator.Interfaces.ServerApi;
 import com.nickzim.newsaggregator.Model.News;
 import com.nickzim.newsaggregator.R;
-import com.nickzim.newsaggregator.Interfaces.ServerApi;
 
 import java.util.List;
 

@@ -7,11 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="news" />
+        <module name="ServerSide" />
+        <module name="TestTask" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ServerSide" options="-parameters" />
+      <module name="TestTask" options="-parameters" />
       <module name="news" options="-parameters" />
     </option>
   </component>

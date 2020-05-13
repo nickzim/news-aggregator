@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.stream.Collectors;
 
 public class RSSFeed {
@@ -17,6 +18,8 @@ public class RSSFeed {
 
     private ArrayList<News> newsList;
 
+    private HashSet<String> categoryList;
+
     public RSSFeed(String feedUrl) {
         try {
             feed = new URL(feedUrl);
@@ -25,6 +28,7 @@ public class RSSFeed {
             System.out.println(exc.getMessage());
         }
     }
+
 
     public RSSFeed(String feedUrl, String name) {
         this.name = name;
@@ -36,13 +40,32 @@ public class RSSFeed {
         }
     }
 
+    public ArrayList<News> getNewsFromCategory(String category){
+
+        ArrayList<News> list = new ArrayList<>();
+
+        for (News it: newsList){
+
+            if (it.getCategory().equals(category)){
+                list.add(it);
+            }
+        }
+
+        return list;
+
+    }
+
     public ArrayList<News> getNewsList() {
         return newsList;
     }
 
+    public HashSet<String> getCategoryList() {return categoryList;}
+
+
     private void createNewsList() throws IOException{
 
         newsList =  new ArrayList<>();
+        categoryList = new HashSet<>();
 
         BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream()));
         String result = br.lines().collect(Collectors.joining());
@@ -64,6 +87,7 @@ public class RSSFeed {
             }
             if (str.trim().startsWith("category") && !newsList.isEmpty()){
                 newsList.get(0).setCategory(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
+                categoryList.add(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
             }
             if (str.startsWith("description") && !newsList.isEmpty()){
                 newsList.get(0).setDescription(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
@@ -72,5 +96,7 @@ public class RSSFeed {
 
         br.close();
     }
+
+
 
 }
