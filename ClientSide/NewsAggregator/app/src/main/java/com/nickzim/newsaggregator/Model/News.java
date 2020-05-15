@@ -53,9 +53,8 @@ public class News {
     public String toString() {
         String result = (title != null) ? title + "\n" : "";
         result += (description != null) ? description + "\n" : "";
-        result += (link != null) ? link + "\n" : "";
-        result += (pubDate != null) ? pubDate + "\n" : "";
         result += (category != null) ? category + "\n" : "";
+        result += (pubDate != null) ? pubDate + "\n" : "";
 
 
        return result;

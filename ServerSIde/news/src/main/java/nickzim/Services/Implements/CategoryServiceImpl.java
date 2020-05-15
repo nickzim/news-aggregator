@@ -1,4 +1,4 @@
-package nickzim.Services;
+package nickzim.Services.Implements;
 
 import nickzim.Model.RSSFeed;
 import nickzim.Services.Contracts.CategoryService;

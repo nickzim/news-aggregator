@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 @RestController
 @RequestMapping("/rest/news")
@@ -23,12 +24,17 @@ public class NewsController {
     private CategoryService categoryService;
 
     @RequestMapping(value = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ArrayList<News> getAllNewsForFeed(@RequestBody FeedUrl feedUrl){
-        return newsService.getAll(feedUrl.getUrl());
+    public ArrayList<News> getAllNewsForFeed(@RequestParam ("feedUrl") String feedUrl){
+        return newsService.getAll(feedUrl);
     }
 
+    /*@RequestMapping(value = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<News> getAllNewsForFeed(){
+        return newsService.getAll("http://tass.ru/rss/v2.xml");
+    }*/
+
     @RequestMapping(value = "/all/category", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ArrayList<News> getAllNewsForFeedForCategory(@RequestBody CategoryFeedUrl feedUrl){
+    public List<News> getAllNewsForFeedForCategory(@RequestBody CategoryFeedUrl feedUrl){
         return newsService.getAllFromCategory(feedUrl.getUrl(), feedUrl.getCategory());
     }
 
