@@ -7,13 +7,17 @@ import nickzim.Services.Contracts.NewsService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 @Service
 public class NewsServiceImpl implements NewsService {
 
     @Override
-    public ArrayList<News> getAll(String feedUrl) {
+    public ArrayList<News> getAll() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<News> getAllFromFeed(String feedUrl) {
         if (!feedUrl.isEmpty()) {
             return new RSSFeed(feedUrl).getNewsList();
         } else {

@@ -11,7 +11,12 @@ import java.util.HashSet;
 public class CategoryServiceImpl implements CategoryService {
 
     @Override
-    public HashSet<String> getAll(String FeedUrl) {
+    public HashSet<String> getAllForFeed(String FeedUrl) {
         return new RSSFeed(FeedUrl).getCategoryList();
+    }
+
+    @Override
+    public HashSet<String> getAll() {
+        return null;
     }
 }

@@ -5,6 +5,7 @@ import java.util.HashSet;
 
 public interface CategoryService {
 
-    HashSet<String> getAll(String FeedUrl);
+    HashSet<String> getAllForFeed(String FeedUrl);
 
+    HashSet<String> getAll();
 }
