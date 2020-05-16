@@ -2,12 +2,21 @@ package nickzim.Model;
 
 public class News {
 
+
+    private String agency;
     private String title;
     private String link;
     private String pubDate;
     private String description;
     private String category;
 
+    public String getAgency() {
+        return agency;
+    }
+
+    public void setAgency(String agency) {
+        this.agency = agency;
+    }
 
     public String getTitle() {
         return title;

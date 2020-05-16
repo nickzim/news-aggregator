@@ -1,11 +1,10 @@
 package nickzim.Services.Contracts;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.HashMap;
 
 public interface CategoryService {
 
-    HashSet<String> getAllForFeed(String FeedUrl);
+    HashMap getAllForFeed(String FeedUrl);
 
-    HashSet<String> getAll();
+    HashMap<String, Integer> getAll();
 }

@@ -1,22 +1,26 @@
 package nickzim.Services.Implements;
 
 import nickzim.Model.RSSFeed;
+import nickzim.Model.RSSFeedsBase;
 import nickzim.Services.Contracts.CategoryService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.HashMap;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
     @Override
-    public HashSet<String> getAllForFeed(String FeedUrl) {
+    public HashMap<String,Integer> getAllForFeed(String FeedUrl) {
         return new RSSFeed(FeedUrl).getCategoryList();
     }
 
     @Override
-    public HashSet<String> getAll() {
-        return null;
+    public HashMap<String, Integer> getAll() {
+        HashMap<String,Integer> categoriesMap = new HashMap<>();
+        for (RSSFeed it: RSSFeedsBase.getFeeds()){
+            categoriesMap.putAll(it.getCategoryList());
+        }
+        return categoriesMap;
     }
 }

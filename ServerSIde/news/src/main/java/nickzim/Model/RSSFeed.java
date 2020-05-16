@@ -6,11 +6,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class RSSFeed {
+
 
     private String name;
 
@@ -18,7 +19,7 @@ public class RSSFeed {
 
     private ArrayList<News> newsList;
 
-    private HashSet<String> categoryList;
+    private HashMap<String,Integer> categoryMap;
 
     public RSSFeed(String feedUrl) {
         try {
@@ -30,7 +31,7 @@ public class RSSFeed {
     }
 
 
-    public RSSFeed(String feedUrl, String name) {
+    public RSSFeed(String name, String feedUrl) {
         this.name = name;
         try {
             feed = new URL(feedUrl);
@@ -38,6 +39,14 @@ public class RSSFeed {
         } catch (IOException exc) {
             System.out.println(exc.getMessage());
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public URL getFeed() {
+        return feed;
     }
 
     public ArrayList<News> getNewsFromCategory(String category){
@@ -59,13 +68,18 @@ public class RSSFeed {
         return newsList;
     }
 
-    public HashSet<String> getCategoryList() {return categoryList;}
+    public HashMap<String,Integer> getCategoryList() {
+        HashMap<String,Integer> sortedCategoryMap = new LinkedHashMap<>();
+        Stream<Map.Entry<String, Integer>> mapStream = categoryMap.entrySet().stream();
+        mapStream.sorted(Map.Entry.comparingByValue()).forEach(e -> sortedCategoryMap.put(e.getKey(), e.getValue()));
+        return sortedCategoryMap;
+    }
 
 
     private void createNewsList() throws IOException{
 
         newsList =  new ArrayList<>();
-        categoryList = new HashSet<>();
+        categoryMap = new HashMap<>();
 
         BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream()));
         String result = br.lines().collect(Collectors.joining());
@@ -75,6 +89,7 @@ public class RSSFeed {
 
             if (str.trim().startsWith("item")){
                 newsList.add(0,new News());
+                newsList.get(0).setAgency(name);
             }
             if (str.trim().startsWith("title") && !newsList.isEmpty()){
                 newsList.get(0).setTitle(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
@@ -87,11 +102,13 @@ public class RSSFeed {
             }
             if (str.trim().startsWith("category") && !newsList.isEmpty()){
                 newsList.get(0).setCategory(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
-                categoryList.add(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
+                String category = StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim();
+                categoryMap.put(category,(categoryMap.get(category) == null) ? 0 : categoryMap.get(category) + 1);
             }
             if (str.startsWith("description") && !newsList.isEmpty()){
                 newsList.get(0).setDescription(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
             }
+
         }
 
         br.close();

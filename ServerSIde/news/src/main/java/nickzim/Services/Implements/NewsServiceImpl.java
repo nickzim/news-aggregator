@@ -3,6 +3,7 @@ package nickzim.Services.Implements;
 
 import nickzim.Model.News;
 import nickzim.Model.RSSFeed;
+import nickzim.Model.RSSFeedsBase;
 import nickzim.Services.Contracts.NewsService;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,11 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public ArrayList<News> getAll() {
-        return null;
+        ArrayList<News> news = new ArrayList<>();
+        for (RSSFeed it: RSSFeedsBase.getFeeds()){
+            news.addAll(it.getNewsList());
+        }
+        return news;
     }
 
     @Override
