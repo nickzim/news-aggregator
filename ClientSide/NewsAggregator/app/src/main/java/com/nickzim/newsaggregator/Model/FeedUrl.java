@@ -2,13 +2,8 @@ package com.nickzim.newsaggregator.Model;
 
 public class FeedUrl {
 
-    FeedUrl(){
-        this.url = null;
-    }
-
-    public FeedUrl(String url){
-        this.url = url;
-    }
+    private String url;
+    private String name;
 
     public String getUrl() {
         return url;
@@ -18,7 +13,13 @@ public class FeedUrl {
         this.url = url;
     }
 
-    private String url;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
 
 }

@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.103:8080/rest/news/")
+                .baseUrl("http://news-aggregator-eltech.herokuapp.com/rest/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
