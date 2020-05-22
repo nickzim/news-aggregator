@@ -22,4 +22,8 @@ public class FeedUrl {
     }
 
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }

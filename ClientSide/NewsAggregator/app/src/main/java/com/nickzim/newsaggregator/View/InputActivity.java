@@ -9,13 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.nickzim.newsaggregator.Interfaces.ServerApi;
 import com.nickzim.newsaggregator.R;
-
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class InputActivity extends AppCompatActivity {
 
@@ -36,8 +30,9 @@ public class InputActivity extends AppCompatActivity {
         msg.setText("Отсутствует интернет соединение");
 
         if (hasConnection(InputActivity.this)) {
-            Intent intent = new Intent(InputActivity.this, MainActivity.class);
+            Intent intent = new Intent(InputActivity.this, FeedsListActivity.class);
             startActivity(intent);
+            finish();
         }
 
     }

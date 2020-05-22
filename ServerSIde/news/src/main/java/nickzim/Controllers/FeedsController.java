@@ -1,7 +1,6 @@
 package nickzim.Controllers;
 
 import nickzim.Model.DTO.RSSFeedDTO;
-import nickzim.Model.RSSFeed;
 import nickzim.Services.Contracts.FeedsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

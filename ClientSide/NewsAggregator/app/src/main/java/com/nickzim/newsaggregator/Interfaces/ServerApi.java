@@ -4,6 +4,7 @@ import com.nickzim.newsaggregator.Model.FeedUrl;
 import com.nickzim.newsaggregator.Model.News;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
@@ -20,10 +21,10 @@ public interface ServerApi {
     Call<List<News>> getNewsForCategory(@Query("feedUrl") String feedUrl, @Query("category") String category);
 
     @GET("news/categories")
-    Call<List<String>> getCategoriesFromFeed(@Query("feedUrl") String feedUrl);
+    Call<HashMap<String, Integer>> getCategoriesFromFeed(@Query("feedUrl") String feedUrl);
 
     @GET("news/categories/all")
-    Call<List<String>> getAllCategories();
+    Call<HashMap<String, Integer>> getAllCategories();
 
     @GET("news/all")
     Call<List<News>> getAllNews();
