@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashSet;
 
+
+
 @RestController
 @RequestMapping("/rest/feeds")
 public class FeedsController {
@@ -21,4 +23,5 @@ public class FeedsController {
     public HashSet<RSSFeedDTO> getAllFeeds(){
         return feedsService.getAllFeeds();
     }
+
 }
