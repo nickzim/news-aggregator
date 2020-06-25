@@ -1,4 +1,4 @@
-package nickzim.Controllers;
+package nickzim.Controllers.REST;
 
 import nickzim.Services.Contracts.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

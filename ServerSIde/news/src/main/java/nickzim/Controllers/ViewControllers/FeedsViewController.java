@@ -1,4 +1,4 @@
-package nickzim.Controllers;
+package nickzim.Controllers.ViewControllers;
 
 import nickzim.Services.Contracts.FeedsService;
 import org.springframework.beans.factory.annotation.Autowired;

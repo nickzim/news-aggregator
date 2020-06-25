@@ -1,4 +1,4 @@
-package nickzim.Controllers;
+package nickzim.Controllers.ViewControllers;
 
 import nickzim.Model.News;
 import nickzim.Services.Contracts.NewsService;

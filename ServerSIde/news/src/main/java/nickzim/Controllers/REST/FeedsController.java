@@ -1,4 +1,4 @@
-package nickzim.Controllers;
+package nickzim.Controllers.REST;
 
 import nickzim.Model.DTO.RSSFeedDTO;
 import nickzim.Services.Contracts.FeedsService;

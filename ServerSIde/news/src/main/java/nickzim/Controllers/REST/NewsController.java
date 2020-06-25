@@ -1,4 +1,4 @@
-package nickzim.Controllers;
+package nickzim.Controllers.REST;
 
 import nickzim.Model.News;
 import nickzim.Services.Contracts.NewsService;
