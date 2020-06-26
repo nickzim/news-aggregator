@@ -16,6 +16,7 @@ import com.nickzim.newsaggregator.Adapters.NewsAdapter;
 import com.nickzim.newsaggregator.Interfaces.ServerApi;
 import com.nickzim.newsaggregator.Model.News;
 import com.nickzim.newsaggregator.R;
+import com.nickzim.newsaggregator.ServerApiInstance;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -29,59 +30,50 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NewsFeedActivity extends AppCompatActivity {
 
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_news_feed);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_news_feed);
 
-    Intent intent = getIntent();
+        Intent intent = getIntent();
 
-    Gson gson = new GsonBuilder()
-            .setLenient()
-            .create();
-
-    Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://news-aggregator-eltech.herokuapp.com/rest/")
-            .addConverterFactory(GsonConverterFactory.create(gson))
-            .build();
-
-    final ServerApi serverApi = retrofit.create(ServerApi.class);
+        ServerApi serverApi = ServerApiInstance.getInstance().getServerApi();
 
 
-    final RecyclerView recyclerView = findViewById(R.id.list);
-    recyclerView.setHasFixedSize(true);
-    LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-    recyclerView.setLayoutManager(layoutManager);
-    final Context context = this;
+        final RecyclerView recyclerView = findViewById(R.id.list);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        final Context context = this;
 
-    final Call<List<News>> newsList;
-    if (intent.getStringExtra("category").equals("null")) {
-        newsList = serverApi.getNews(intent.getStringExtra("url"));
-    } else {
-        newsList = serverApi.getNewsForCategory(intent.getStringExtra("url"),intent.getStringExtra("category"));
-        System.out.println(intent.getStringExtra("category"));
+        final Call<List<News>> newsList;
+        if (intent.getStringExtra("category").equals("null")) {
+            newsList = serverApi.getNews(intent.getStringExtra("url"));
+        } else {
+            newsList = serverApi.getNewsForCategory(intent.getStringExtra("url"), intent.getStringExtra("category"));
+            System.out.println(intent.getStringExtra("category"));
+        }
+        newsList.enqueue(new Callback<List<News>>() {
+            @Override
+            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
+                NewsAdapter adapter = new NewsAdapter(response.body(), context);
+                adapter.setListener(new NewsAdapter.onClickListener() {
+                    @Override
+                    public void onClick(News news) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(news.getLink()));
+                        startActivity(browserIntent);
+                    }
+                });
+                recyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(Call<List<News>> call, Throwable t) {
+                String failMsg[] = {"Ошибка при подключении к серверу", t.getMessage()};
+                NewsAdapter adapter = new NewsAdapter(Collections.EMPTY_LIST, context);
+                recyclerView.setAdapter(adapter);
+            }
+        });
     }
-    newsList.enqueue(new Callback<List<News>>() {
-        @Override
-        public void onResponse(Call<List<News>> call, Response<List<News>> response) {
-            NewsAdapter adapter = new NewsAdapter(response.body(), context);
-            adapter.setListener(new NewsAdapter.onClickListener() {
-                @Override
-                public void onClick(News news) {
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(news.getLink()));
-                    startActivity(browserIntent);
-                }
-            });
-            recyclerView.setAdapter(adapter);
-        }
-
-        @Override
-        public void onFailure(Call<List<News>> call, Throwable t) {
-            String failMsg[] = {"Ошибка при подключении к серверу", t.getMessage()};
-            NewsAdapter adapter = new NewsAdapter(Collections.EMPTY_LIST, context);
-            recyclerView.setAdapter(adapter);
-        }
-    });
-        }
 
 }

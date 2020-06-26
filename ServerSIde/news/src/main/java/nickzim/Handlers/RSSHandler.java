@@ -30,8 +30,8 @@ public class RSSHandler {
 
         String result = br.lines().collect(Collectors.joining());
 
-        for (String str: StringHandler.deleteCDATAs(result).split(">\\s*<")){
 
+        for (String str: StringHandler.deleteCDATAs(result).split(">\\s*<")){
 
             if (str.trim().startsWith("item")){
                 newsList.add(0,new News());

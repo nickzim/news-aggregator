@@ -46,6 +46,11 @@ public class RSSFeed {
     }
 
     public ArrayList<News> getNewsFromCategory(String category){
+        try {
+            createNewsList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         ArrayList<News> list = new ArrayList<>();
 
         for (News it: newsList){
@@ -60,6 +65,11 @@ public class RSSFeed {
     }
 
     public ArrayList<News> getNewsList() {
+        try {
+            createNewsList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return newsList;
     }
 
