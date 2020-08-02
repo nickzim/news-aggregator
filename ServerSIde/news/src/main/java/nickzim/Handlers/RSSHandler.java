@@ -19,7 +19,7 @@ public class RSSHandler {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream()));
 
-        String firstLine = br.readLine();
+        StringBuilder firstLine = new StringBuilder(br.readLine());
         if(firstLine != null && firstLine.indexOf("windows-1251") == -1){
             br.close();
             br = new BufferedReader(new InputStreamReader(feed.openStream()));
@@ -29,6 +29,7 @@ public class RSSHandler {
         }
 
         String result = br.lines().collect(Collectors.joining());
+        //br.lines().forEach();
 
 
         for (String str: StringHandler.deleteCDATAs(result).split(">\\s*<")){
