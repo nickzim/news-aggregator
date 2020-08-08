@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
@@ -28,33 +29,31 @@ public class RSSHandler {
             br = new BufferedReader(new InputStreamReader(feed.openStream(),"Windows-1251"));
         }
 
-        String result = br.lines().collect(Collectors.joining());
-        //br.lines().forEach();
+        Arrays.stream(StringHandler.deleteCDATAs(br.lines().collect(Collectors.joining())).split(">\\s*<")).forEach(str -> {
 
+            str = str.trim();
 
-        for (String str: StringHandler.deleteCDATAs(result).split(">\\s*<")){
-
-            if (str.trim().startsWith("item")){
+            if (str.startsWith("item")){
                 newsList.add(0,new News());
                 newsList.get(0).setAgency(name);
             }
-            if (str.trim().startsWith("title") && !newsList.isEmpty()){
+            if (str.startsWith("title") && !newsList.isEmpty()){
                 newsList.get(0).setTitle(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
             }
-            if (str.trim().startsWith("link") && !newsList.isEmpty()){
+            if (str.startsWith("link") && !newsList.isEmpty()){
                 newsList.get(0).setLink(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
             }
-            if (str.trim().startsWith("pubDate") && !newsList.isEmpty()){
+            if (str.startsWith("pubDate") && !newsList.isEmpty()){
                 newsList.get(0).setPubDate(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
             }
-            if (str.trim().startsWith("category") && !newsList.isEmpty()){
+            if (str.startsWith("category") && !newsList.isEmpty()){
                 newsList.get(0).setCategory(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
             }
             if (str.startsWith("description") && !newsList.isEmpty()){
                 newsList.get(0).setDescription(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
             }
 
-        }
+        });
 
         br.close();
 
