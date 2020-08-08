@@ -8,7 +8,6 @@
     <artifactId>TestTask</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -44,14 +43,6 @@
             <artifactId>jstl</artifactId>
         </dependency>
 
-        <!--DataBase-->
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.16</version>
-        </dependency>
-
         <!--Tests-->
 
         <dependency>
@@ -60,7 +51,6 @@
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
-
 
     </dependencies>
 

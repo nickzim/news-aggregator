@@ -49,7 +49,6 @@ public class RSSHandler {
             }
             if (str.trim().startsWith("category") && !newsList.isEmpty()){
                 newsList.get(0).setCategory(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
-                String category = StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim();
             }
             if (str.startsWith("description") && !newsList.isEmpty()){
                 newsList.get(0).setDescription(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
@@ -66,7 +65,7 @@ public class RSSHandler {
         HashMap<String,Integer> categoriesMap = new HashMap<>();
         for (News it: newsList){
             String category = it.getCategory();
-            categoriesMap.put(category, categoriesMap.get(category) == null ? 1 : categoriesMap.get(category).intValue() + 1);
+            categoriesMap.put(category, categoriesMap.getOrDefault(category,0) + 1);
         }
         return categoriesMap;
     }
