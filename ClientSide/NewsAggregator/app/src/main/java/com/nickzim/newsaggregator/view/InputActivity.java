@@ -1,12 +1,12 @@
-package com.nickzim.newsaggregator.View;
+package com.nickzim.newsaggregator.view;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.TextView;
 
 import com.nickzim.newsaggregator.R;
@@ -42,20 +42,15 @@ public class InputActivity extends AppCompatActivity {
         ConnectivityManager cm = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo wifiInfo = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
-        if (wifiInfo != null && wifiInfo.isConnected()) {
-            return true;
+        if (wifiInfo == null){
+            return false;
         }
 
-        wifiInfo = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-        if (wifiInfo != null && wifiInfo.isConnected()) {
+        if (wifiInfo.isConnected()) {
             return true;
+        } else {
+            wifiInfo = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+            return wifiInfo.isConnected();
         }
-
-        wifiInfo = cm.getActiveNetworkInfo();
-        if (wifiInfo != null && wifiInfo.isConnected()) {
-            return true;
-        }
-
-        return false;
     }
 }

@@ -1,32 +1,25 @@
-package com.nickzim.newsaggregator.View;
+package com.nickzim.newsaggregator.view;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.nickzim.newsaggregator.Adapters.NewsAdapter;
-import com.nickzim.newsaggregator.Interfaces.ServerApi;
-import com.nickzim.newsaggregator.Model.News;
 import com.nickzim.newsaggregator.R;
 import com.nickzim.newsaggregator.ServerApiInstance;
+import com.nickzim.newsaggregator.adapters.NewsAdapter;
+import com.nickzim.newsaggregator.model.News;
+import com.nickzim.newsaggregator.serverapi.ServerApi;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NewsFeedActivity extends AppCompatActivity {
 

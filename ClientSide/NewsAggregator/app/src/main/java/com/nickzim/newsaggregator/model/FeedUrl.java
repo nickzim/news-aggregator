@@ -1,4 +1,4 @@
-package com.nickzim.newsaggregator.Model;
+package com.nickzim.newsaggregator.model;
 
 public class FeedUrl {
 

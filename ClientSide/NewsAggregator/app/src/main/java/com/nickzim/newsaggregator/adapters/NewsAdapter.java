@@ -1,4 +1,4 @@
-package com.nickzim.newsaggregator.Adapters;
+package com.nickzim.newsaggregator.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.nickzim.newsaggregator.Model.News;
+import com.nickzim.newsaggregator.model.News;
 import com.nickzim.newsaggregator.R;
 
 import java.util.List;
@@ -35,10 +35,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        final TextView titleView;
-        final TextView descriptionView;
-        final TextView dateView;
-        final TextView categoryView;
+        private final TextView titleView;
+        private final TextView descriptionView;
+        private final TextView dateView;
+        private final TextView categoryView;
 
         ViewHolder(View view){
             super(view);

@@ -10,9 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.FeedsListActivity"></activity>
-        <activity android:name=".View.NewsFeedActivity" />
-        <activity android:name=".View.InputActivity">
+        <activity android:name=".view.FeedsListActivity"></activity>
+        <activity android:name=".view.NewsFeedActivity" />
+        <activity android:name=".view.InputActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

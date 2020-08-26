@@ -1,9 +1,8 @@
-package com.nickzim.newsaggregator.Interfaces;
+package com.nickzim.newsaggregator.serverapi;
 
-import com.nickzim.newsaggregator.Model.FeedUrl;
-import com.nickzim.newsaggregator.Model.News;
+import com.nickzim.newsaggregator.model.FeedUrl;
+import com.nickzim.newsaggregator.model.News;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
