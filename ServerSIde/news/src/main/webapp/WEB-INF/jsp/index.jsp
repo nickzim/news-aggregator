@@ -7,10 +7,12 @@
     <title>Новостной агрегатор</title>
 </head>
 <body>
-<%
-    String redirectURL = "http://localhost:8080/feeds";
-    response.sendRedirect(redirectURL);
-%>
+
+    <jsp:scriptlet>
+        String redirectURL = "http://localhost:8080/feeds";
+        response.sendRedirect(redirectURL);
+    </jsp:scriptlet>
+
 </body>
 
 </html>

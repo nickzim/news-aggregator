@@ -1,6 +1,6 @@
-package nickzim.Controllers.REST;
+package nickzim.controllers.rest;
 
-import nickzim.Services.Contracts.CategoryService;
+import nickzim.services.contracts.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;

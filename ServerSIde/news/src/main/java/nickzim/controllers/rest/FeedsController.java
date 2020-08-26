@@ -1,7 +1,7 @@
-package nickzim.Controllers.REST;
+package nickzim.controllers.rest;
 
-import nickzim.Model.DTO.RSSFeedDTO;
-import nickzim.Services.Contracts.FeedsService;
+import nickzim.model.dto.RssFeedDto;
+import nickzim.services.contracts.FeedsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +17,10 @@ import java.util.HashSet;
 public class FeedsController {
 
     @Autowired
-    FeedsService feedsService;
+    private FeedsService feedsService;
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public HashSet<RSSFeedDTO> getAllFeeds(){
+    public HashSet<RssFeedDto> getAllFeeds(){
         return feedsService.getAllFeeds();
     }
 

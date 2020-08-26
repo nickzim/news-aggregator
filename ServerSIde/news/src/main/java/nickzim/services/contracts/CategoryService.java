@@ -1,6 +1,6 @@
-package nickzim.Services.Contracts;
+package nickzim.services.contracts;
 
-import nickzim.Model.DTO.CategoryDTO;
+import nickzim.model.dto.CategoryDto;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,5 +11,5 @@ public interface CategoryService {
 
     HashMap<String, Integer> getAll();
 
-    ArrayList<CategoryDTO> getAllDTOsForFeed(String FeedUrl);
+    ArrayList<CategoryDto> getAllDTOsForFeed(String FeedUrl);
 }

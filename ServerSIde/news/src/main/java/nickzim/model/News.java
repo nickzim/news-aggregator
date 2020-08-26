@@ -1,4 +1,4 @@
-package nickzim.Model;
+package nickzim.model;
 
 public class News {
 

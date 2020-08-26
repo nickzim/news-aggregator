@@ -1,10 +1,10 @@
-package nickzim.Services.Implements;
+package nickzim.services.impls;
 
 
-import nickzim.Model.News;
-import nickzim.Model.RSSFeed;
-import nickzim.Model.RSSFeedsBase;
-import nickzim.Services.Contracts.NewsService;
+import nickzim.model.News;
+import nickzim.model.RssFeed;
+import nickzim.model.database.RssFeedsBase;
+import nickzim.services.contracts.NewsService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class NewsServiceImpl implements NewsService {
     @Override
     public ArrayList<News> getAll() {
         ArrayList<News> news = new ArrayList<>();
-        for (RSSFeed it: RSSFeedsBase.getFeeds()){
+        for (RssFeed it: RssFeedsBase.getFeeds()){
             news.addAll(it.getNewsList());
         }
         return news;
@@ -24,7 +24,7 @@ public class NewsServiceImpl implements NewsService {
     @Override
     public ArrayList<News> getAllFromFeed(String feedUrl) {
         if (!feedUrl.isEmpty()) {
-            return new RSSFeed(feedUrl).getNewsList();
+            return new RssFeed(feedUrl).getNewsList();
         } else {
             return new ArrayList<>();
         }
@@ -32,6 +32,6 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public ArrayList<News> getAllFromCategory(String feedUrl, String category) {
-        return new RSSFeed(feedUrl).getNewsFromCategory(category);
+        return new RssFeed(feedUrl).getNewsFromCategory(category);
     }
 }

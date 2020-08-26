@@ -1,6 +1,6 @@
-package nickzim.Services.Contracts;
+package nickzim.services.contracts;
 
-import nickzim.Model.News;
+import nickzim.model.News;
 
 import java.util.ArrayList;
 

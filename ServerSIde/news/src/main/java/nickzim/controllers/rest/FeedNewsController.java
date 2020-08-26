@@ -1,7 +1,7 @@
-package nickzim.Controllers.REST;
+package nickzim.controllers.rest;
 
-import nickzim.Model.News;
-import nickzim.Services.Contracts.NewsService;
+import nickzim.model.News;
+import nickzim.services.contracts.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

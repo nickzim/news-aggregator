@@ -1,11 +1,11 @@
-package nickzim.Model.DTO;
+package nickzim.model.dto;
 
-public class RSSFeedDTO {
+public class RssFeedDto {
 
     private String name;
     private String url;
 
-    public RSSFeedDTO(String name, String url) {
+    public RssFeedDto(String name, String url) {
         this.name = name;
         this.url = url;
     }

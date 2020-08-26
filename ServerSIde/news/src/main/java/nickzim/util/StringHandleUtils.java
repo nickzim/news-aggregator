@@ -1,6 +1,6 @@
-package nickzim.Handlers;
+package nickzim.util;
 
-public class StringHandler {
+public class StringHandleUtils {
 
 
     public static String deleteTags(String str){

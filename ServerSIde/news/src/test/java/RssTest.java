@@ -1,6 +1,5 @@
-import nickzim.Handlers.RSSHandler;
-import nickzim.Model.News;
-import nickzim.Model.RSSFeed;
+import nickzim.util.RssHandleUtils;
+import nickzim.model.News;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,7 +27,7 @@ public class RssTest {
     @Test
     public void getNewsFromRSS() throws IOException {
 
-        for (News it: RSSHandler.getNewsListFromRSS(feedUrl, "ТАСС")){
+        for (News it: RssHandleUtils.getNewsListFromRSS(feedUrl, "ТАСС")){
             System.out.println(it);
         }
 
@@ -36,7 +35,7 @@ public class RssTest {
 
     @Test
     public void getCategoriesFromRSS() throws IOException {
-        HashMap<String,Integer> map = RSSHandler.getCategoryMap(RSSHandler.getNewsListFromRSS(feedUrl,"ТАСС"));
+        HashMap<String,Integer> map = RssHandleUtils.getCategoryMap(RssHandleUtils.getNewsListFromRSS(feedUrl,"ТАСС"));
         for (String it: map.keySet()){
             System.out.println(it + " : " + map.get(it));
         }

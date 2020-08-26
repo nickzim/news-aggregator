@@ -1,6 +1,6 @@
-package nickzim.Controllers.ViewControllers;
+package nickzim.controllers.viewcontrollers;
 
-import nickzim.Services.Contracts.FeedsService;
+import nickzim.services.contracts.FeedsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FeedsViewController {
 
     @Autowired
-    FeedsService feedsService;
+    private FeedsService feedsService;
 
     @RequestMapping(value = {"/feeds"}, method = RequestMethod.GET)
     public String viewFeeds(Model model) {

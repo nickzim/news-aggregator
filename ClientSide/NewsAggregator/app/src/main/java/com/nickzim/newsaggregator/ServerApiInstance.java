@@ -18,7 +18,7 @@ public class ServerApiInstance {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.103:8080/rest/")
+                .baseUrl("http://192.168.0.101:8080/rest/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 

@@ -1,8 +1,7 @@
-package nickzim.Handlers;
+package nickzim.util;
 
-import nickzim.Model.News;
+import nickzim.model.News;
 
-import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,7 +11,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
-public class RSSHandler {
+public class RssHandleUtils {
 
     public static ArrayList<News> getNewsListFromRSS(URL feed, String name) throws IOException {
 
@@ -29,7 +28,7 @@ public class RSSHandler {
             br = new BufferedReader(new InputStreamReader(feed.openStream(),"Windows-1251"));
         }
 
-        Arrays.stream(StringHandler.deleteCDATAs(br.lines().collect(Collectors.joining())).split(">\\s*<")).forEach(str -> {
+        Arrays.stream(StringHandleUtils.deleteCDATAs(br.lines().collect(Collectors.joining())).split(">\\s*<")).forEach(str -> {
 
             str = str.trim();
 
@@ -38,19 +37,19 @@ public class RSSHandler {
                 newsList.get(0).setAgency(name);
             }
             if (str.startsWith("title") && !newsList.isEmpty()){
-                newsList.get(0).setTitle(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
+                newsList.get(0).setTitle(StringHandleUtils.deleteTags(StringHandleUtils.deleteQuotes(str)).trim());
             }
             if (str.startsWith("link") && !newsList.isEmpty()){
-                newsList.get(0).setLink(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
+                newsList.get(0).setLink(StringHandleUtils.deleteTags(StringHandleUtils.deleteQuotes(str)).trim());
             }
             if (str.startsWith("pubDate") && !newsList.isEmpty()){
-                newsList.get(0).setPubDate(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
+                newsList.get(0).setPubDate(StringHandleUtils.deleteTags(StringHandleUtils.deleteQuotes(str)).trim());
             }
             if (str.startsWith("category") && !newsList.isEmpty()){
-                newsList.get(0).setCategory(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
+                newsList.get(0).setCategory(StringHandleUtils.deleteTags(StringHandleUtils.deleteQuotes(str)).trim());
             }
             if (str.startsWith("description") && !newsList.isEmpty()){
-                newsList.get(0).setDescription(StringHandler.deleteTags(StringHandler.deleteQuotes(str)).trim());
+                newsList.get(0).setDescription(StringHandleUtils.deleteTags(StringHandleUtils.deleteQuotes(str)).trim());
             }
 
         });
@@ -63,8 +62,9 @@ public class RSSHandler {
     public static HashMap<String, Integer> getCategoryMap(ArrayList<News> newsList){
         HashMap<String,Integer> categoriesMap = new HashMap<>();
         for (News it: newsList){
-            String category = it.getCategory();
-            categoriesMap.put(category, categoriesMap.getOrDefault(category,0) + 1);
+            if (it.getCategory() != null) {
+                categoriesMap.put(it.getCategory(), categoriesMap.getOrDefault(it.getCategory(), 0) + 1);
+            }
         }
         return categoriesMap;
     }
