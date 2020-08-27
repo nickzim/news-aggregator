@@ -1,13 +1,13 @@
 import nickzim.util.RssHandleUtils;
 import nickzim.model.News;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 
 public class RssTest {
 
@@ -19,25 +19,29 @@ public class RssTest {
     }
 
     @Test
-    public void getRSS() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(feedUrl.openStream()));
-        br.lines().forEach(System.out::println);
-    }
-
-    @Test
     public void getNewsFromRSS() throws IOException {
 
-        for (News it: RssHandleUtils.getNewsListFromRSS(feedUrl, "ТАСС")){
+        List<News> newsList = RssHandleUtils.getNewsListFromRSS(feedUrl, "ТАСС");
+
+        for (News it: newsList){
             System.out.println(it);
         }
+
+        Assert.assertNotNull(newsList);
+        Assert.assertNotSame(0, newsList.size());
+
 
     }
 
     @Test
     public void getCategoriesFromRSS() throws IOException {
         HashMap<String,Integer> map = RssHandleUtils.getCategoryMap(RssHandleUtils.getNewsListFromRSS(feedUrl,"ТАСС"));
+
         for (String it: map.keySet()){
             System.out.println(it + " : " + map.get(it));
         }
+
+        Assert.assertNotNull(map);
+        Assert.assertNotSame(0,map.size());
     }
 }
