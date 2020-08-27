@@ -7,8 +7,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -53,7 +56,14 @@ public class RssHandleUtils {
 
                     matcher = datePattern.matcher(it);
                     if (matcher.find()) {
-                        news.setPubDate(handleString(matcher.group()));
+                        DateTimeFormatter formatter;
+                        if (handleString(matcher.group()).endsWith("GMT")) {
+                            formatter = DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm:ss O", Locale.ENGLISH);
+                        } else {
+                            formatter = DateTimeFormatter.ofPattern("EEE, dd MMM yyyy HH:mm:ss Z", Locale.ENGLISH);
+                        }
+                        LocalDateTime dateTime = LocalDateTime.parse(handleString(matcher.group()), formatter);
+                        news.setPubDate(dateTime);
                     }
 
                     matcher = descriptionPattern.matcher(it);

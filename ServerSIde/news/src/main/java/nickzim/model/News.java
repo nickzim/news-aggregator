@@ -1,12 +1,15 @@
 package nickzim.model;
 
+
+import java.time.LocalDateTime;
+
 public class News {
 
 
     private String agency;
     private String title;
     private String link;
-    private String pubDate;
+    private LocalDateTime pubDate;
     private String description;
     private String category;
 
@@ -34,11 +37,11 @@ public class News {
         this.link = link;
     }
 
-    public String getPubDate() {
+    public LocalDateTime getPubDate() {
         return pubDate;
     }
 
-    public void setPubDate(String pubDate) {
+    public void setPubDate(LocalDateTime pubDate) {
         this.pubDate = pubDate;
     }
 
