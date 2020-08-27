@@ -6,10 +6,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.stream.Collectors;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static nickzim.util.StringHandleUtils.*;
 
 public class RssHandleUtils {
 
@@ -17,46 +20,66 @@ public class RssHandleUtils {
 
         ArrayList<News> newsList = new ArrayList<>();
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream()));
+        String charset;
 
-        StringBuilder firstLine = new StringBuilder(br.readLine());
-        if(firstLine != null && firstLine.indexOf("windows-1251") == -1){
-            br.close();
-            br = new BufferedReader(new InputStreamReader(feed.openStream()));
-        } else {
-            br.close();
-            br = new BufferedReader(new InputStreamReader(feed.openStream(),"Windows-1251"));
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream()))) {
+            charset = isUtf(br.readLine()) ? StandardCharsets.UTF_8.toString() : "Windows-1251";
         }
 
-        Arrays.stream(StringHandleUtils.deleteCDATAs(br.lines().collect(Collectors.joining())).split(">\\s*<")).forEach(str -> {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream(), charset))) {
 
-            str = str.trim();
+            Pattern titlePattern = Pattern.compile("<title>.+</title>");
+            Pattern linkPattern = Pattern.compile("<link>.+</link>");
+            Pattern datePattern = Pattern.compile("<pubDate>.+</pubDate>");
+            Pattern descriptionPattern = Pattern.compile("<description>.+</description>");
+            Pattern categoryPattern = Pattern.compile("<category>.+</category>");
 
-            if (str.startsWith("item")){
-                newsList.add(0,new News());
-                newsList.get(0).setAgency(name);
-            }
-            if (str.startsWith("title") && !newsList.isEmpty()){
-                newsList.get(0).setTitle(StringHandleUtils.deleteTags(StringHandleUtils.deleteQuotes(str)).trim());
-            }
-            if (str.startsWith("link") && !newsList.isEmpty()){
-                newsList.get(0).setLink(StringHandleUtils.deleteTags(StringHandleUtils.deleteQuotes(str)).trim());
-            }
-            if (str.startsWith("pubDate") && !newsList.isEmpty()){
-                newsList.get(0).setPubDate(StringHandleUtils.deleteTags(StringHandleUtils.deleteQuotes(str)).trim());
-            }
-            if (str.startsWith("category") && !newsList.isEmpty()){
-                newsList.get(0).setCategory(StringHandleUtils.deleteTags(StringHandleUtils.deleteQuotes(str)).trim());
-            }
-            if (str.startsWith("description") && !newsList.isEmpty()){
-                newsList.get(0).setDescription(StringHandleUtils.deleteTags(StringHandleUtils.deleteQuotes(str)).trim());
-            }
+            StringBuilder lines = new StringBuilder();
+            br.lines().forEach(lines::append);
+            for(String it : lines.toString().split("<item>|</item>\\n<item>|</item>")) {
 
-        });
+                if (!it.trim().isEmpty()) {
+                    News news = new News();
 
-        br.close();
+                    Matcher matcher = titlePattern.matcher(it);
+                    if (matcher.find()) {
+                        news.setTitle(handleString(matcher.group()));
+                    }
+
+                    matcher = linkPattern.matcher(it);
+                    if (matcher.find()) {
+                        news.setLink(handleString(matcher.group()));
+                    }
+
+                    matcher = datePattern.matcher(it);
+                    if (matcher.find()) {
+                        news.setPubDate(handleString(matcher.group()));
+                    }
+
+                    matcher = descriptionPattern.matcher(it);
+                    if (matcher.find()) {
+                        news.setDescription(handleString(matcher.group()));
+                    }
+
+                    matcher = categoryPattern.matcher(it);
+                    if (matcher.find()) {
+                        news.setCategory(handleString(matcher.group()));
+                    }
+
+                    news.setAgency(name);
+                    newsList.add(news);
+                }
+            }
+        }
+
+        newsList.remove(0);
+        newsList.remove(newsList.size()-1);
 
         return newsList;
+    }
+
+    private static boolean isUtf(String line){
+        return !line.contains("windows-1251");
     }
 
     public static HashMap<String, Integer> getCategoryMap(ArrayList<News> newsList){

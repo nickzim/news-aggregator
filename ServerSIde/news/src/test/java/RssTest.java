@@ -15,7 +15,7 @@ public class RssTest {
 
     @Before
     public void setUp() throws IOException{
-        feedUrl = new URL("http://tass.ru/rss/v2.xml");
+        feedUrl = new URL("https://www.kommersant.ru/RSS/main.xml");
     }
 
     @Test

@@ -3,15 +3,19 @@ package nickzim.util;
 public class StringHandleUtils {
 
 
-    public static String deleteTags(String str){
-        return str.replaceAll("\\w*>|</\\w*","");
+    private static String deleteTags(String str){
+        return str.replaceAll("<\\w+>|</\\w+>","");
     }
 
-    public static String deleteQuotes(String str){
+    private static String deleteQuotes(String str){
         return str.replaceAll("&quot;","");
     }
 
-    public static String deleteCDATAs(String str){
-        return str.replaceAll("<!\\[CDATA\\[|]]","");
+    private static String deleteCDATAs(String str){
+        return str.replaceAll("<!\\[CDATA\\[|]]>","");
+    }
+
+    public static String handleString(String str){
+        return deleteTags(deleteQuotes(deleteCDATAs(str)));
     }
 }

@@ -78,7 +78,7 @@ public class RssFeed {
 
         for (News it: newsList){
 
-            if (it.getCategory().equals(category)){
+            if (it.getCategory() != null && it.getCategory().equals(category)){
                 newsFromCategoryList.add(it);
             }
         }

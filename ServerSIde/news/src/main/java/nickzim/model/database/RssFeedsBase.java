@@ -18,7 +18,6 @@ public class RssFeedsBase {
             add(new RssFeed("Коммерсантъ", "https://www.kommersant.ru/RSS/main.xml" ));
             add(new RssFeed("Российская газета", "https://rg.ru/xml/index.xml"));
             add(new RssFeed("Ведомости", "https://www.vedomosti.ru/rss/news"));
-            add(new RssFeed("Советский спорт", "https://www.sovsport.ru/news_rss"));
             add(new RssFeed("Газета.ру", "https://www.gazeta.ru/export/rss/first.xml"));
             add(new RssFeed("Интерфакс","https://www.interfax.ru/rss.asp"));
         }};
