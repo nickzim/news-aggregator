@@ -1,4 +1,4 @@
-package nickzim.util;
+package nickzim.utils;
 
 import nickzim.model.News;
 
@@ -15,7 +15,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static nickzim.util.StringHandleUtils.*;
+import static nickzim.utils.StringHandleUtils.*;
 
 public class RssHandleUtils {
 

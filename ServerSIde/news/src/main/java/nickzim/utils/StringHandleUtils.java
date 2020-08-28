@@ -1,4 +1,4 @@
-package nickzim.util;
+package nickzim.utils;
 
 public class StringHandleUtils {
 

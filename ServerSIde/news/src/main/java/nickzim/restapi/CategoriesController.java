@@ -1,4 +1,4 @@
-package nickzim.controllers.rest;
+package nickzim.restapi;
 
 import nickzim.services.contracts.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class CategoriesController {
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public HashMap<String,Integer> getAllCategoriesForFeed(@RequestParam ("feedUrl") String feedUrl){
-        return categoryService.getAllForFeed(feedUrl);
+        return categoryService.getAllForFeedUrl(feedUrl);
     }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)

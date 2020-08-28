@@ -5,19 +5,19 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CategoryDto {
+public class CategoryDto implements Comparable<CategoryDto> {
 
-    private String nameUTF8;
-
-    private String nameCP1251;
+    private String name;
 
     private Integer count;
 
-    public CategoryDto(String nameUTF8, String nameCP1251, Integer count) {
-        this.nameUTF8 = nameUTF8;
-        this.nameCP1251 = nameCP1251;
+    public CategoryDto(String name, Integer count) {
+        this.name = name;
         this.count = count;
     }
 
-
+    @Override
+    public int compareTo(CategoryDto o) {
+        return o.count - this.count;
+    }
 }

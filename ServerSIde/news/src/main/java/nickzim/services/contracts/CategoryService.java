@@ -7,9 +7,10 @@ import java.util.HashMap;
 
 public interface CategoryService {
 
-    HashMap getAllForFeed(String FeedUrl);
+    HashMap getAllForFeedUrl(String feedUrl);
 
     HashMap<String, Integer> getAll();
 
-    ArrayList<CategoryDto> getAllDTOsForFeed(String FeedUrl);
+    ArrayList<CategoryDto> getAllDTOsForFeedUrl(String feedUrl);
+
 }

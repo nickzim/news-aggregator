@@ -1,12 +1,15 @@
 package nickzim.model;
 
-import nickzim.util.RssHandleUtils;
+import nickzim.utils.RssHandleUtils;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class RssFeed {
 
@@ -68,6 +71,7 @@ public class RssFeed {
 
     public HashMap<String,Integer> getCategoryList() {
         downloadRssData();
+
         return categoryMap;
     }
 

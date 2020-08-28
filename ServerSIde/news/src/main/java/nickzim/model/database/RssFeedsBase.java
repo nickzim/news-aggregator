@@ -1,6 +1,7 @@
 package nickzim.model.database;
 
 import nickzim.model.RssFeed;
+import nickzim.model.dto.RssFeedDto;
 
 import java.util.HashSet;
 
@@ -25,5 +26,14 @@ public class RssFeedsBase {
 
     static public HashSet<RssFeed> getFeeds(){
         return feeds;
+    }
+
+    static public RssFeedDto getRssFeedDto(String name){
+        for (RssFeed it: feeds){
+            if (it.getName().equals(name)){
+                return new RssFeedDto(it.getName(), it.getFeed().toString());
+            }
+        }
+        return null;
     }
 }

@@ -1,13 +1,11 @@
 package nickzim.services.impls;
 
-import nickzim.model.dto.CategoryDto;
-import nickzim.model.database.RssFeedsBase;
 import nickzim.model.RssFeed;
+import nickzim.model.database.RssFeedsBase;
+import nickzim.model.dto.CategoryDto;
 import nickzim.services.contracts.CategoryService;
 import org.springframework.stereotype.Service;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -15,9 +13,10 @@ import java.util.HashMap;
 public class CategoryServiceImpl implements CategoryService {
 
     @Override
-    public HashMap<String,Integer> getAllForFeed(String FeedUrl) {
-        return new RssFeed(FeedUrl).getCategoryList();
+    public HashMap<String,Integer> getAllForFeedUrl(String feedUrl) {
+        return new RssFeed(feedUrl).getCategoryList();
     }
+
 
     @Override
     public HashMap<String, Integer> getAll() {
@@ -29,9 +28,9 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public ArrayList<CategoryDto> getAllDTOsForFeed(String FeedUrl) {
+    public ArrayList<CategoryDto> getAllDTOsForFeedUrl(String feedUrl) {
 
-        HashMap<String,Integer> categoriesMap = getAllForFeed(FeedUrl);
+        HashMap<String,Integer> categoriesMap = getAllForFeedUrl(feedUrl);
 
         if (categoriesMap.isEmpty()){
             return new ArrayList<>();
@@ -40,12 +39,12 @@ public class CategoryServiceImpl implements CategoryService {
         ArrayList<CategoryDto> categories = new ArrayList<>();
 
         for (String it: categoriesMap.keySet()){
-            try {
-                categories.add(new CategoryDto(URLEncoder.encode(it,"UTF8"), it , categoriesMap.get(it)));
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
+            categories.add(new CategoryDto(it , categoriesMap.get(it)));
         }
+        categories.sort((o1, o2) -> o2.getCount() - o1.getCount());
+
         return categories;
     }
+
+
 }

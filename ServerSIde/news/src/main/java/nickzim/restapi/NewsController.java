@@ -1,4 +1,4 @@
-package nickzim.controllers.rest;
+package nickzim.restapi;
 
 import nickzim.model.News;
 import nickzim.services.contracts.NewsService;

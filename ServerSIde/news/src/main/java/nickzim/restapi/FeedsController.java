@@ -1,4 +1,4 @@
-package nickzim.controllers.rest;
+package nickzim.restapi;
 
 import nickzim.model.dto.RssFeedDto;
 import nickzim.services.contracts.FeedsService;
