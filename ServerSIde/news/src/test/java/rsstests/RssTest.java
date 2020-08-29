@@ -1,3 +1,5 @@
+package rsstests;
+
 import nickzim.utils.RssHandleUtils;
 import nickzim.model.News;
 import org.junit.Assert;

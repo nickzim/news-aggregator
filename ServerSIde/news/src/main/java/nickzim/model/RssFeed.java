@@ -2,14 +2,11 @@ package nickzim.model;
 
 import nickzim.utils.RssHandleUtils;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class RssFeed {
 

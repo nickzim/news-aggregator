@@ -23,6 +23,10 @@ public class RssFeedsBase {
             add(new RssFeed("Интерфакс","https://www.interfax.ru/rss.asp"));
             add(new RssFeed("CNN", "http://rss.cnn.com/rss/edition.rss"));
             add(new RssFeed("Al Jazeera","https://www.aljazeera.com/xml/rss/all.xml"));
+            add(new RssFeed("Russia Today","https://russian.rt.com/rss"));
+            add(new RssFeed("The New York Times", "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"));
+            add(new RssFeed("BBC","http://feeds.bbci.co.uk/news/rss.xml"));
+            add(new RssFeed("Sky Sports","https://www.skysports.com/rss/12040"));
         }};
     }
 
@@ -30,12 +34,4 @@ public class RssFeedsBase {
         return feeds;
     }
 
-    static public RssFeedDto getRssFeedDto(String name){
-        for (RssFeed it: feeds){
-            if (it.getName().equals(name)){
-                return new RssFeedDto(it.getName(), it.getFeed().toString());
-            }
-        }
-        return null;
-    }
 }
