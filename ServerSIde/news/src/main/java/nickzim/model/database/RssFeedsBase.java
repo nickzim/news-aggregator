@@ -21,6 +21,8 @@ public class RssFeedsBase {
             add(new RssFeed("Ведомости", "https://www.vedomosti.ru/rss/news"));
             add(new RssFeed("Газета.ру", "https://www.gazeta.ru/export/rss/first.xml"));
             add(new RssFeed("Интерфакс","https://www.interfax.ru/rss.asp"));
+            add(new RssFeed("CNN", "http://rss.cnn.com/rss/edition.rss"));
+            add(new RssFeed("Al Jazeera","https://www.aljazeera.com/xml/rss/all.xml"));
         }};
     }
 

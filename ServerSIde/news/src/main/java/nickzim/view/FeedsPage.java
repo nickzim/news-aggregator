@@ -4,10 +4,11 @@ package nickzim.view;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.*;
+import com.vaadin.flow.router.Route;
 import nickzim.model.dto.RssFeedDto;
 import nickzim.services.contracts.FeedsService;
 import nickzim.services.impls.FeedsServiceImpl;
+
 
 @Route("feeds")
 public class FeedsPage extends VerticalLayout {
@@ -21,6 +22,7 @@ public class FeedsPage extends VerticalLayout {
         grid.setItems(service.getAllFeeds());
         grid.getColumnByKey("name").setHeader("Новостное агентство");
         grid.removeColumnByKey("url");
+        grid.setHeightByRows(true);
 
         grid.addItemClickListener(e -> {
             UI.getCurrent().navigate(CategoriesPage.class, e.getItem().getUrl().replaceAll("/","_"));

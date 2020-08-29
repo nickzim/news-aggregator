@@ -58,7 +58,8 @@ public class RssHandleUtils {
                     if (matcher.find()) {
                         DateTimeFormatter formatter;
                         if (handleString(matcher.group()).endsWith("GMT")) {
-                            formatter = DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm:ss O", Locale.ENGLISH);
+                            //formatter = DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm:ss O", Locale.ENGLISH);
+                            formatter = DateTimeFormatter.ofPattern("EEE, dd MMM yyyy HH:mm:ss O", Locale.ENGLISH);
                         } else {
                             formatter = DateTimeFormatter.ofPattern("EEE, dd MMM yyyy HH:mm:ss Z", Locale.ENGLISH);
                         }
