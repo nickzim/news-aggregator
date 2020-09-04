@@ -3,9 +3,9 @@ package com.nickzim.newsaggregator.serverapi;
 import com.nickzim.newsaggregator.model.FeedUrl;
 import com.nickzim.newsaggregator.model.News;
 
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -20,16 +20,16 @@ public interface ServerApi {
     Call<List<News>> getNewsForCategory(@Query("feedUrl") String feedUrl, @Query("category") String category);
 
     @GET("news/categories")
-    Call<HashMap<String, Integer>> getCategoriesFromFeed(@Query("feedUrl") String feedUrl);
+    Call<Map<String, Integer>> getCategoriesFromFeed(@Query("feedUrl") String feedUrl);
 
     @GET("news/categories/all")
-    Call<HashMap<String, Integer>> getAllCategories();
+    Call<Map<String, Integer>> getAllCategories();
 
     @GET("news/all")
     Call<List<News>> getAllNews();
 
     @GET("feeds")
-    Call<HashSet<FeedUrl>> getAllFeeds();
+    Call<Set<FeedUrl>> getAllFeeds();
 
 
 

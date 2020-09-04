@@ -8,13 +8,14 @@ import nickzim.services.contracts.NewsService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class NewsServiceImpl implements NewsService {
 
     @Override
-    public ArrayList<News> getAll() {
-        ArrayList<News> news = new ArrayList<>();
+    public List<News> getAll() {
+        List<News> news = new ArrayList<>();
         for (RssFeed it: RssFeedsBase.getFeeds()){
             news.addAll(it.getNewsList());
         }
@@ -22,16 +23,13 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public ArrayList<News> getAllFromFeed(String feedUrl) {
-        if (!feedUrl.isEmpty()) {
-            return new RssFeed(feedUrl).getNewsList();
-        } else {
-            return new ArrayList<>();
-        }
+    public List<News> getAllFromFeed(String feedUrl) {
+
+        return new RssFeed(feedUrl).getNewsList();
     }
 
     @Override
-    public ArrayList<News> getAllFromCategory(String feedUrl, String category) {
+    public List<News> getAllFromCategory(String feedUrl, String category) {
         return new RssFeed(feedUrl).getNewsFromCategory(category);
     }
 }

@@ -2,9 +2,9 @@ package nickzim.services.contracts;
 
 import nickzim.model.dto.RssFeedDto;
 
-import java.util.HashSet;
+import java.util.Set;
 
 public interface FeedsService {
 
-    HashSet<RssFeedDto> getAllFeeds();
+    Set<RssFeedDto> getAllFeeds();
 }

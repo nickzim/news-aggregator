@@ -8,8 +8,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RssTest {
 
@@ -37,7 +37,7 @@ public class RssTest {
 
     @Test
     public void getCategoriesFromRSS() throws IOException {
-        HashMap<String,Integer> map = RssHandleUtils.getCategoryMap(RssHandleUtils.getNewsListFromRSS(feedUrl,"ТАСС"));
+        Map<String,Integer> map = RssHandleUtils.getCategoryMap(RssHandleUtils.getNewsListFromRSS(feedUrl,"ТАСС"));
 
         for (String it: map.keySet()){
             System.out.println(it + " : " + map.get(it));

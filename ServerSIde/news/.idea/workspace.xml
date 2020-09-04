@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f27a852-b83b-4a2e-a470-ceb265a60326" name="Default Changelist" comment="" />
+    <list default="true" id="6f27a852-b83b-4a2e-a470-ceb265a60326" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/nickzim/utils/DateUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ClientSide/NewsAggregator/app/src/main/java/com/nickzim/newsaggregator/ServerApiInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ClientSide/NewsAggregator/app/src/main/java/com/nickzim/newsaggregator/ServerApiInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ClientSide/NewsAggregator/app/src/main/java/com/nickzim/newsaggregator/serverapi/ServerApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ClientSide/NewsAggregator/app/src/main/java/com/nickzim/newsaggregator/serverapi/ServerApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ClientSide/NewsAggregator/app/src/main/java/com/nickzim/newsaggregator/view/FeedsListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ClientSide/NewsAggregator/app/src/main/java/com/nickzim/newsaggregator/view/FeedsListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/model/RssFeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/model/RssFeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/model/database/RssFeedsBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/model/database/RssFeedsBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/model/dto/RssFeedDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/model/dto/RssFeedDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/restapi/CategoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/restapi/CategoriesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/restapi/FeedNewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/restapi/FeedNewsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/restapi/FeedsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/restapi/FeedsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/restapi/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/restapi/NewsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/services/contracts/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/services/contracts/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/services/contracts/FeedsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/services/contracts/FeedsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/services/contracts/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/services/contracts/NewsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/services/impls/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/services/impls/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/services/impls/FeedsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/services/impls/FeedsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/services/impls/NewsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/services/impls/NewsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nickzim/utils/RssHandleUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nickzim/utils/RssHandleUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/rsstests/RssTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/rsstests/RssTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/ServerSide.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/ServerSide.kotlin_module" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,54 +51,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/view/FeedsPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="24" column="35" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/view/CategoriesPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/view/NewsPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/database/RssFeedsBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -84,22 +60,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/RssTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/view/NewsPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="442">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/impls/CategoryServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/view/CategoriesPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+            <state relative-caret-position="306">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/impls/NewsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/contracts/FeedsService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,20 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/RssFeed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-731">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/restapi/FeedNewsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state relative-caret-position="102">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,8 +113,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/impls/FeedsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="289">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/utils/RssHandleUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/utils/DateUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-85">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/utils/StringHandleUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -169,16 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/Controllers/NewsViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/Controllers/CategoriesViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/feeds.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/news.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/Controllers/FeedsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/Services/Implements/NewsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/Model/RSSFeedsBase.java" />
-        <option value="$PROJECT_DIR$/src/test/java/nickzim/FeedsTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/nickzim/Services/Implements/FeedsServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/nickzim/Services/Implements/NewsServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/Services/NewsServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/HandleRssTest.java" />
@@ -206,20 +208,30 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/nickzim/controllers/SecurityConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/nickzim/view/MainPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/restapi/CategoriesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/services/contracts/CategoryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/model/RssFeed.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/model/dto/CategoryDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/services/impls/CategoryServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/RssTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/utils/RssHandleUtils.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/nickzim/model/database/RssFeedsBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/nickzim/view/FeedsPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/nickzim/view/CategoriesPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/nickzim/view/NewsPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/restapi/CategoriesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/restapi/FeedNewsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/restapi/FeedsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/restapi/NewsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/services/contracts/CategoryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/services/contracts/FeedsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/services/contracts/NewsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/services/impls/FeedsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/model/database/RssFeedsBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/nickzim/model/database/RssFeedsBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/nickzim/model/RssFeed.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/model/RssFeed.java" />
+        <option value="$PROJECT_DIR$/src/test/java/rsstests/RssTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/model/dto/RssFeedDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/model/dto/CategoryDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/services/impls/CategoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/services/impls/NewsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/utils/RssHandleUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nickzim/utils/DateUtils.java" />
       </list>
     </option>
   </component>
@@ -247,7 +259,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="CatdeaLogs" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -298,7 +310,74 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="nickzim" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nickzim" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nickzim" type="462c0819:PsiDirectoryNode" />
               <item name="restapi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nickzim" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nickzim" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nickzim" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="contracts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nickzim" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="impls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nickzim" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="news" type="b2602c69:ProjectViewProjectNode" />
@@ -338,7 +417,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="CatdeaLogs" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -349,7 +428,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1598726577297" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1599239647044" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -386,7 +465,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RssTest">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="FeedsTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ServerSide" />
       <extension name="coverage">
@@ -429,68 +508,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_regexPattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Twisted Trial">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Spring Boot.Application (1)" />
@@ -499,10 +516,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Application" />
         <item itemvalue="JUnit.RssTest" />
         <item itemvalue="Spring Boot.Application (1)" />
         <item itemvalue="JUnit.FeedsTests" />
-        <item itemvalue="Spring Boot.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -565,14 +582,20 @@
       <workItem from="1598539468082" duration="4534000" />
       <workItem from="1598565876437" duration="594000" />
       <workItem from="1598617511392" duration="15534000" />
-      <workItem from="1598713442142" duration="9995000" />
+      <workItem from="1598713442142" duration="10682000" />
+      <workItem from="1598789733036" duration="2073000" />
+      <workItem from="1598870035061" duration="877000" />
+      <workItem from="1598875556389" duration="1413000" />
+      <workItem from="1598982633831" duration="12000" />
+      <workItem from="1598991259509" duration="690000" />
+      <workItem from="1599066147004" duration="1256000" />
+      <workItem from="1599154971491" duration="1233000" />
+      <workItem from="1599208695481" duration="3743000" />
+      <workItem from="1599228321900" duration="4771000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RssTest - 2020.08.27 at 17h 29m 04s.xml">
-      <configuration name="RssTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RssTest - 2020.08.27 at 18h 12m 21s.xml">
       <configuration name="RssTest" configurationId="JUnit" />
     </history-entry>
@@ -600,9 +623,12 @@
     <history-entry file="RssTest - 2020.08.27 at 21h 30m 58s.xml">
       <configuration name="RssTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RssTest - 2020.08.29 at 21h 42m 29s.xml">
+      <configuration name="RssTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189449000" />
+    <option name="totallyTimeSpent" value="206204000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -614,10 +640,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2217484" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24147122" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -628,7 +654,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.35791758" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.35791758" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -959,27 +985,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/controllers/viewcontrollers/NewsViewController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/controllers/viewcontrollers/FeedsViewController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/restapi/NewsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/restapi/FeedsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-554">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/categories.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/news.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/controllers/viewcontrollers/CategoriesViewController.java" />
@@ -990,13 +995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/impls/NewsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/security/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1004,31 +1002,179 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/restapi/CategoriesController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/view/FeedsPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="306">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/contracts/CategoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/contracts/FeedsService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar!/lombok/Setter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/restapi/FeedsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/restapi/NewsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/contracts/NewsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/restapi/CategoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/restapi/FeedNewsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/contracts/CategoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/rsstests/RssTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/dto/RssFeedDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/impls/CategoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/dto/CategoryDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/News.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/database/RssFeedsBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/view/NewsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/view/CategoriesPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/contracts/FeedsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/impls/FeedsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/impls/NewsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/RssFeed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1041,131 +1187,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/utils/RssHandleUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="61" column="96" selection-start-line="61" selection-start-column="96" selection-end-line="61" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/dto/RssFeedDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/dto/CategoryDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/News.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/RssTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/impls/CategoryServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/utils/DateUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/services/impls/FeedsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/view/FeedsPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/view/CategoriesPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/view/NewsPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/database/RssFeedsBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/model/RssFeed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-731">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nickzim/restapi/FeedNewsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-85">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
         </state>
       </provider>
     </entry>

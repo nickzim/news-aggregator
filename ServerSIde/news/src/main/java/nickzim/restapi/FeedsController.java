@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashSet;
-
+import java.util.Set;
 
 
 @RestController
@@ -20,7 +19,7 @@ public class FeedsController {
     private FeedsService feedsService;
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public HashSet<RssFeedDto> getAllFeeds(){
+    public Set<RssFeedDto> getAllFeeds(){
         return feedsService.getAllFeeds();
     }
 

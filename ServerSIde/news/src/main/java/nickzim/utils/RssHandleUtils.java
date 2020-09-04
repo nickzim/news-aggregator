@@ -9,9 +9,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,14 +17,14 @@ import static nickzim.utils.StringHandleUtils.*;
 
 public class RssHandleUtils {
 
-    public static ArrayList<News> getNewsListFromRSS(URL feed, String name) throws IOException {
+    public static List<News> getNewsListFromRSS(URL feed, String name) throws IOException {
 
-        ArrayList<News> newsList = new ArrayList<>();
+        List<News> newsList = new ArrayList<>();
 
         String charset;
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream()))) {
-            charset = isUtf(br.readLine()) ? StandardCharsets.UTF_8.toString() : "Windows-1251";
+            charset = br.readLine().contains("windows-1251") ? "Windows-1251" : StandardCharsets.UTF_8.toString();
         }
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream(), charset))) {
@@ -56,15 +54,7 @@ public class RssHandleUtils {
 
                     matcher = datePattern.matcher(it);
                     if (matcher.find()) {
-                        DateTimeFormatter formatter;
-                        if (handleString(matcher.group()).endsWith("GMT")) {
-                            //formatter = DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm:ss O", Locale.ENGLISH);
-                            formatter = DateTimeFormatter.ofPattern("EEE, dd MMM yyyy HH:mm:ss O", Locale.ENGLISH);
-                        } else {
-                            formatter = DateTimeFormatter.ofPattern("EEE, dd MMM yyyy HH:mm:ss Z", Locale.ENGLISH);
-                        }
-                        LocalDateTime dateTime = LocalDateTime.parse(handleString(matcher.group()), formatter);
-                        news.setPubDate(dateTime);
+                        news.setPubDate(DateUtils.getNewsPubDate(matcher.group()));
                     }
 
                     matcher = descriptionPattern.matcher(it);
@@ -89,17 +79,16 @@ public class RssHandleUtils {
         return newsList;
     }
 
-    private static boolean isUtf(String line){
-        return !line.contains("windows-1251");
-    }
+    public static Map<String, Integer> getCategoryMap(List<News> newsList){
 
-    public static HashMap<String, Integer> getCategoryMap(ArrayList<News> newsList){
-        HashMap<String,Integer> categoriesMap = new HashMap<>();
+        Map<String,Integer> categoriesMap = new HashMap<>();
+
         for (News it: newsList){
             if (it.getCategory() != null) {
                 categoriesMap.put(it.getCategory(), categoriesMap.getOrDefault(it.getCategory(), 0) + 1);
             }
         }
+
         return categoriesMap;
     }
 }

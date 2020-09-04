@@ -16,8 +16,8 @@ import com.nickzim.newsaggregator.ServerApiInstance;
 import com.nickzim.newsaggregator.model.FeedUrl;
 import com.nickzim.newsaggregator.serverapi.ServerApi;
 
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,20 +35,20 @@ public class FeedsListActivity extends AppCompatActivity {
         final ListView feedsList = findViewById(R.id.feedsList);
         final ListView categoriesList = findViewById(R.id.categoriesList);
 
-        final Call<HashSet<FeedUrl>> feeds = serverApi.getAllFeeds();
-        feeds.enqueue(new Callback<HashSet<FeedUrl>>() {
+        final Call<Set<FeedUrl>> feeds = serverApi.getAllFeeds();
+        feeds.enqueue(new Callback<Set<FeedUrl>>() {
             @Override
-            public void onResponse(Call<HashSet<FeedUrl>> call, Response<HashSet<FeedUrl>> response) {
+            public void onResponse(Call<Set<FeedUrl>> call, Response<Set<FeedUrl>> response) {
                 ArrayAdapter<Object> adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_list_item_1, response.body().toArray());
                 feedsList.setAdapter(adapter);
                 feedsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, final int feedPosition, long l) {
                         FeedUrl feed = (FeedUrl) feedsList.getItemAtPosition(feedPosition);
-                        Call<HashMap<String, Integer>> categories = serverApi.getCategoriesFromFeed(feed.getUrl());
-                        categories.enqueue(new Callback<HashMap<String, Integer>>() {
+                        Call<Map<String, Integer>> categories = serverApi.getCategoriesFromFeed(feed.getUrl());
+                        categories.enqueue(new Callback<Map<String, Integer>>() {
                             @Override
-                            public void onResponse(Call<HashMap<String, Integer>> call, Response<HashMap<String, Integer>> response) {
+                            public void onResponse(Call<Map<String, Integer>> call, Response<Map<String, Integer>> response) {
                                 String[] data = new String[response.body().size() + 1];
                                 data[0] = "Все категории";
                                 int i = 1;
@@ -76,7 +76,7 @@ public class FeedsListActivity extends AppCompatActivity {
                             }
 
                             @Override
-                            public void onFailure(Call<HashMap<String, Integer>> call, Throwable t) {
+                            public void onFailure(Call<Map<String, Integer>> call, Throwable t) {
                                 System.out.println(t.getMessage());
                                 Log.e("error", t.getMessage());
                             }
@@ -86,7 +86,7 @@ public class FeedsListActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<HashSet<FeedUrl>> call, Throwable t) {
+            public void onFailure(Call<Set<FeedUrl>> call, Throwable t) {
                 System.out.println(t.getMessage());
                 Log.e("error", t.getMessage());
             }

@@ -2,13 +2,13 @@ package nickzim.services.contracts;
 
 import nickzim.model.News;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface NewsService {
 
-    ArrayList<News> getAll();
+    List<News> getAll();
 
-    ArrayList<News> getAllFromFeed(String feedUrl);
+    List<News> getAllFromFeed(String feedUrl);
 
-    ArrayList<News> getAllFromCategory(String feedUrl, String category);
+    List<News> getAllFromCategory(String feedUrl, String category);
 }

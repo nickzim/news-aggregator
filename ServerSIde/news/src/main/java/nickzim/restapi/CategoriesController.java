@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/rest/news/categories")
@@ -18,12 +18,12 @@ public class CategoriesController {
     private CategoryService categoryService;
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public HashMap<String,Integer> getAllCategoriesForFeed(@RequestParam ("feedUrl") String feedUrl){
+    public Map<String,Integer> getAllCategoriesForFeed(@RequestParam ("feedUrl") String feedUrl){
         return categoryService.getAllForFeedUrl(feedUrl);
     }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public HashMap<String, Integer> getAllCategories(){
+    public Map<String, Integer> getAllCategories(){
         return categoryService.getAll();
     }
 }

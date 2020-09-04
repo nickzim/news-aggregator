@@ -1,5 +1,6 @@
 package nickzim.model.dto;
 
+
 public class RssFeedDto {
 
     private String name;

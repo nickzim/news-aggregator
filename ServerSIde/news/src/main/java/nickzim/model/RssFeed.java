@@ -7,6 +7,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class RssFeed {
 
@@ -15,9 +17,9 @@ public class RssFeed {
 
     private URL feed;
 
-    private ArrayList<News> newsList;
+    private List<News> newsList;
 
-    private HashMap<String,Integer> categoryMap;
+    private Map<String,Integer> categoryMap;
 
     public RssFeed(String feedUrl) {
         try {
@@ -46,13 +48,16 @@ public class RssFeed {
 
 
     private void downloadRssData(){
+
         try {
+
             if (newsList == null) {
                 newsList = RssHandleUtils.getNewsListFromRSS(feed, name);
             }
             if (categoryMap == null) {
                 categoryMap = RssHandleUtils.getCategoryMap(newsList);
             }
+
         } catch (IOException e) {
             newsList = new ArrayList<>();
             categoryMap = new HashMap<>();
@@ -61,18 +66,18 @@ public class RssFeed {
 
     }
 
-    public ArrayList<News> getNewsList() {
+    public List<News> getNewsList() {
         downloadRssData();
         return newsList;
     }
 
-    public HashMap<String,Integer> getCategoryList() {
+    public Map<String,Integer> getCategoryList() {
         downloadRssData();
 
         return categoryMap;
     }
 
-    public ArrayList<News> getNewsFromCategory(String category){
+    public List<News> getNewsFromCategory(String category){
         ArrayList<News> newsFromCategoryList = new ArrayList<>();
 
         downloadRssData();

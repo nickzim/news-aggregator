@@ -1,13 +1,13 @@
 package nickzim.model.database;
 
 import nickzim.model.RssFeed;
-import nickzim.model.dto.RssFeedDto;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class RssFeedsBase {
 
-    static private HashSet<RssFeed> feeds;
+    static private Set<RssFeed> feeds;
 
     static {
         feeds = new HashSet<RssFeed>(){{
@@ -30,7 +30,7 @@ public class RssFeedsBase {
         }};
     }
 
-    static public HashSet<RssFeed> getFeeds(){
+    static public Set<RssFeed> getFeeds(){
         return feeds;
     }
 

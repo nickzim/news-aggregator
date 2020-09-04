@@ -6,37 +6,38 @@ import nickzim.model.dto.CategoryDto;
 import nickzim.services.contracts.CategoryService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
     @Override
-    public HashMap<String,Integer> getAllForFeedUrl(String feedUrl) {
+    public Map<String,Integer> getAllForFeedUrl(String feedUrl) {
         return new RssFeed(feedUrl).getCategoryList();
     }
 
 
     @Override
-    public HashMap<String, Integer> getAll() {
-        HashMap<String,Integer> categoriesMap = new HashMap<>();
+    public Map<String, Integer> getAll() {
+
+        Map<String,Integer> categoriesMap = new HashMap<>();
         for (RssFeed it: RssFeedsBase.getFeeds()){
             categoriesMap.putAll(it.getCategoryList());
         }
         return categoriesMap;
+
     }
 
     @Override
-    public ArrayList<CategoryDto> getAllDTOsForFeedUrl(String feedUrl) {
+    public List<CategoryDto> getAllDTOsForFeedUrl(String feedUrl) {
 
-        HashMap<String,Integer> categoriesMap = getAllForFeedUrl(feedUrl);
+        Map<String,Integer> categoriesMap = getAllForFeedUrl(feedUrl);
 
         if (categoriesMap.isEmpty()){
-            return new ArrayList<>();
+            return Collections.emptyList();
         }
 
-        ArrayList<CategoryDto> categories = new ArrayList<>();
+        List<CategoryDto> categories = new ArrayList<>();
 
         for (String it: categoriesMap.keySet()){
             categories.add(new CategoryDto(it , categoriesMap.get(it)));

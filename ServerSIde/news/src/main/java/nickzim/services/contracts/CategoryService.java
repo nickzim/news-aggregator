@@ -2,15 +2,15 @@ package nickzim.services.contracts;
 
 import nickzim.model.dto.CategoryDto;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public interface CategoryService {
 
-    HashMap getAllForFeedUrl(String feedUrl);
+    Map getAllForFeedUrl(String feedUrl);
 
-    HashMap<String, Integer> getAll();
+    Map<String, Integer> getAll();
 
-    ArrayList<CategoryDto> getAllDTOsForFeedUrl(String feedUrl);
+    List<CategoryDto> getAllDTOsForFeedUrl(String feedUrl);
 
 }
