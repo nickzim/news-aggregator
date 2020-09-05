@@ -50,11 +50,6 @@
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-        </dependency>
-
         <!--Tests-->
 
         <dependency>
@@ -64,12 +59,16 @@
             <scope>test</scope>
         </dependency>
 
+        <!--Lombok-->
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
             <scope>provided</scope>
         </dependency>
+
+        <!--Vaadin-->
 
         <dependency>
             <groupId>com.vaadin</groupId>
@@ -81,6 +80,7 @@
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -99,6 +99,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
