@@ -1,20 +1,15 @@
 package nickzim.model.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
 public class CategoryDto implements Comparable<CategoryDto> {
 
     private String name;
 
     private Integer count;
-
-    public CategoryDto(String name, Integer count) {
-        this.name = name;
-        this.count = count;
-    }
 
     @Override
     public int compareTo(CategoryDto o) {
