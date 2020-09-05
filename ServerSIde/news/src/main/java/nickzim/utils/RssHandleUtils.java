@@ -37,7 +37,7 @@ public class RssHandleUtils {
 
             StringBuilder lines = new StringBuilder();
             br.lines().forEach(lines::append);
-            for(String it : lines.toString().split("<item>|</item>\\n<item>|</item>")) {
+            for (String it : lines.toString().split("<item>|</item>\\n<item>|</item>")) {
 
                 if (!it.trim().isEmpty()) {
                     News news = new News();
@@ -73,8 +73,10 @@ public class RssHandleUtils {
             }
         }
 
-        newsList.remove(0);
-        newsList.remove(newsList.size()-1);
+        if (!newsList.isEmpty()){
+            newsList.remove(0);
+            newsList.remove(newsList.size() - 1);
+        }
 
         return newsList;
     }

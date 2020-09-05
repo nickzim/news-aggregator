@@ -2,6 +2,7 @@ package nickzim.view;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
@@ -29,6 +30,11 @@ public class NewsPage extends VerticalLayout implements HasUrlParameter<String> 
             newsList = service.getAllFromFeed(feed);
         } else {
             newsList = service.getAllFromCategory(feed,category);
+        }
+
+        if (newsList.isEmpty()){
+            add(new Label("Новости в данном источнике недоступны"));
+            return;
         }
 
         grid.setItems(newsList);
