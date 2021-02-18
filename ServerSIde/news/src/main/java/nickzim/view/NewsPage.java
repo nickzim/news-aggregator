@@ -33,7 +33,7 @@ public class NewsPage extends VerticalLayout implements HasUrlParameter<String> 
         }
 
         if (newsList.isEmpty()){
-            add(new Label("Новости в данном источнике недоступны"));
+            add(new Label("News not available in this source"));
             return;
         }
 
@@ -44,12 +44,12 @@ public class NewsPage extends VerticalLayout implements HasUrlParameter<String> 
             grid.setColumns("title", "pubDate");
         } else {
             grid.setColumns("title", "description", "pubDate");
-            grid.getColumnByKey("description").setHeader("Описание");
+            grid.getColumnByKey("description").setHeader("Description");
 
         }
 
-        grid.getColumnByKey("title").setHeader("Название");
-        grid.getColumnByKey("pubDate").setHeader("Дата публикации");
+        grid.getColumnByKey("title").setHeader("Title");
+        grid.getColumnByKey("pubDate").setHeader("Publication date");
 
         grid.setSortableColumns();
 

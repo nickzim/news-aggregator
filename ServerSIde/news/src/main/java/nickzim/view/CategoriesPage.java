@@ -30,8 +30,8 @@ public class CategoriesPage extends VerticalLayout implements HasUrlParameter<St
             grid.setWidth("1500px");
 
             grid.setColumns("name", "count");
-            grid.getColumnByKey("name").setHeader("Категория").setWidth("1200px");
-            grid.getColumnByKey("count").setHeader("Количество новостей").setWidth("300px");
+            grid.getColumnByKey("name").setHeader("Category").setWidth("1200px");
+            grid.getColumnByKey("count").setHeader("Number of news").setWidth("300px");
 
             grid.getColumnByKey("count").setSortable(false);
             grid.getColumnByKey("name").setSortable(false);
@@ -43,7 +43,7 @@ public class CategoriesPage extends VerticalLayout implements HasUrlParameter<St
             add(grid);
         }
 
-        Button allCategories = new Button("Все категории");
+        Button allCategories = new Button("All categories");
         allCategories.addClickListener(e -> {
             UI.getCurrent().navigate(NewsPage.class, parameter + "+" + "all");
         });

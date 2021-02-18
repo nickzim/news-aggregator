@@ -20,7 +20,7 @@ public class FeedsPage extends VerticalLayout {
 
         Grid<RssFeedDto> grid = new Grid<>(RssFeedDto.class);
         grid.setItems(service.getAllFeeds());
-        grid.getColumnByKey("name").setHeader("Новостное агентство");
+        grid.getColumnByKey("name").setHeader("News source");
         grid.removeColumnByKey("url");
         grid.setHeightByRows(true);
 
