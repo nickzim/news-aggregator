@@ -24,3 +24,9 @@ out/
 *.iml
 *.ipr
 *.iws
+
+node/
+node_modules/
+
+*.json
+*.js
