@@ -17,7 +17,7 @@ public class NewsController {
     @Autowired
     private NewsService newsService;
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<News> getAllNews(){
         return newsService.getAll();
     }

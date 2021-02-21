@@ -18,7 +18,7 @@ public class FeedsController {
     @Autowired
     private FeedsService feedsService;
 
-    @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Set<RssFeedDto> getAllFeeds(){
         return feedsService.getAllFeeds();
     }
