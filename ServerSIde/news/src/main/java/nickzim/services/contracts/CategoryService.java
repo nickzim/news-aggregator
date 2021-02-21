@@ -7,7 +7,7 @@ import java.util.Map;
 
 public interface CategoryService {
 
-    Map getAllForFeedUrl(String feedUrl);
+    Map<String, Integer> getAllForFeedUrl(String feedUrl);
 
     Map<String, Integer> getAll();
 

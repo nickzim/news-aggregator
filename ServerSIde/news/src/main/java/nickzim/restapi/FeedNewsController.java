@@ -15,12 +15,12 @@ public class FeedNewsController {
     @Autowired
     private NewsService newsService;
 
-    @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<News> getAllNewsForFeed(@RequestParam("feedUrl") String feedUrl){
         return newsService.getAllFromFeed(feedUrl);
     }
 
-    @RequestMapping(value = "/category", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/category", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<News> getAllNewsForFeedForCategory(@RequestParam("feedUrl") String feedUrl, @RequestParam("category") String category){
         return newsService.getAllFromCategory(feedUrl,category);
     }
