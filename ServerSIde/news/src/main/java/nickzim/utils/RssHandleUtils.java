@@ -7,13 +7,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static nickzim.utils.StringHandleUtils.*;
+import static nickzim.utils.StringHandleUtils.handleString;
 
 public class RssHandleUtils {
 
@@ -37,6 +38,7 @@ public class RssHandleUtils {
 
             StringBuilder lines = new StringBuilder();
             br.lines().forEach(lines::append);
+
             for (String it : lines.toString().split("<item>|</item>\\n<item>|</item>")) {
 
                 if (!it.trim().isEmpty()) {

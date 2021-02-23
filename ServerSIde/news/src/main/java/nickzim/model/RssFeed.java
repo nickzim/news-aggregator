@@ -12,7 +12,6 @@ import java.util.Map;
 
 public class RssFeed {
 
-
     private String name;
 
     private URL feed;
