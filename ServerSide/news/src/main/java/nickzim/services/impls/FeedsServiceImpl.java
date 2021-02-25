@@ -1,26 +1,22 @@
 package nickzim.services.impls;
 
-import nickzim.model.dto.RssFeedDto;
-import nickzim.model.RssFeed;
-import nickzim.model.database.RssFeedsBase;
+import lombok.RequiredArgsConstructor;
+import nickzim.model.dto.NewsFeed;
+import nickzim.repositories.NewsFeedRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class FeedsServiceImpl implements nickzim.services.contracts.FeedsService {
 
+    private final NewsFeedRepository repository;
+
     @Override
-    public Set<RssFeedDto> getAllFeeds() {
+    public List<NewsFeed> getAllFeeds() {
 
-        Set<RssFeedDto> feedsSet = new HashSet<>();
-
-        for (RssFeed it: RssFeedsBase.getFeeds()){
-            feedsSet.add(new RssFeedDto(it.getName(),it.getFeed().toString()));
-        }
-
-        return feedsSet;
+        return repository.findAll();
     }
 
 }

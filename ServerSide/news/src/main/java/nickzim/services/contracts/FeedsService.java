@@ -1,10 +1,11 @@
 package nickzim.services.contracts;
 
-import nickzim.model.dto.RssFeedDto;
+import nickzim.model.dto.NewsFeed;
 
+import java.util.List;
 import java.util.Set;
 
 public interface FeedsService {
 
-    Set<RssFeedDto> getAllFeeds();
+    List<NewsFeed> getAllFeeds();
 }
