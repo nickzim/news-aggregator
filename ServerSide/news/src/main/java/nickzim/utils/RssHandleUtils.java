@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 
 import static nickzim.utils.StringHandleUtils.handleString;
 
-public class RssHandleUtils {
+public final class RssHandleUtils {
 
     public static List<News> getNewsListFromRSS(URL feed, String name) throws IOException {
 

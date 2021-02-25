@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 import static nickzim.utils.StringHandleUtils.handleString;
 
-public class DateUtils {
+public final class DateUtils {
 
     public static LocalDateTime getNewsPubDate(String dateString){
         DateTimeFormatter formatter;
