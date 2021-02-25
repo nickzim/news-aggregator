@@ -7,17 +7,22 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.Route;
+import lombok.RequiredArgsConstructor;
 import nickzim.model.dto.CategoryDto;
 import nickzim.services.contracts.CategoryService;
-import nickzim.services.impls.CategoryServiceImpl;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Route("categories")
+@Component
+@Scope(BeanDefinition.SCOPE_PROTOTYPE)
+@RequiredArgsConstructor
 public class CategoriesPage extends VerticalLayout implements HasUrlParameter<String> {
 
-    private CategoryService service = new CategoryServiceImpl();
-
+    private final CategoryService service;
 
     @Override
     public void setParameter(BeforeEvent beforeEvent, String parameter) {

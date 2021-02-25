@@ -7,16 +7,22 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.Route;
+import lombok.RequiredArgsConstructor;
 import nickzim.model.News;
 import nickzim.services.contracts.NewsService;
-import nickzim.services.impls.NewsServiceImpl;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Route("news")
+@Component
+@Scope(BeanDefinition.SCOPE_PROTOTYPE)
+@RequiredArgsConstructor
 public class NewsPage extends VerticalLayout implements HasUrlParameter<String> {
 
-    private NewsService service = new NewsServiceImpl();
+    private final NewsService service;
 
     @Override
     public void setParameter(BeforeEvent beforeEvent, String parameter) {
