@@ -29,7 +29,7 @@ public interface ServerApi {
     Call<List<News>> getAllNews();
 
     @GET("feeds")
-    Call<Set<FeedUrl>> getAllFeeds();
+    Call<List<FeedUrl>> getAllFeeds();
 
 
 

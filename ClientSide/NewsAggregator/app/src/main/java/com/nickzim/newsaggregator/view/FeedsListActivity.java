@@ -16,6 +16,7 @@ import com.nickzim.newsaggregator.ServerApiInstance;
 import com.nickzim.newsaggregator.model.FeedUrl;
 import com.nickzim.newsaggregator.serverapi.ServerApi;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -35,10 +36,10 @@ public class FeedsListActivity extends AppCompatActivity {
         final ListView feedsList = findViewById(R.id.feedsList);
         final ListView categoriesList = findViewById(R.id.categoriesList);
 
-        final Call<Set<FeedUrl>> feeds = serverApi.getAllFeeds();
-        feeds.enqueue(new Callback<Set<FeedUrl>>() {
+        final Call<List<FeedUrl>> feeds = serverApi.getAllFeeds();
+        feeds.enqueue(new Callback<List<FeedUrl>>() {
             @Override
-            public void onResponse(Call<Set<FeedUrl>> call, Response<Set<FeedUrl>> response) {
+            public void onResponse(Call<List<FeedUrl>> call, Response<List<FeedUrl>> response) {
                 ArrayAdapter<Object> adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_list_item_1, response.body().toArray());
                 feedsList.setAdapter(adapter);
                 feedsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -86,7 +87,7 @@ public class FeedsListActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Set<FeedUrl>> call, Throwable t) {
+            public void onFailure(Call<List<FeedUrl>> call, Throwable t) {
                 System.out.println(t.getMessage());
                 Log.e("error", t.getMessage());
             }
