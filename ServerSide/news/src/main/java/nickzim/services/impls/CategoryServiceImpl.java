@@ -1,10 +1,9 @@
 package nickzim.services.impls;
 
 import lombok.RequiredArgsConstructor;
-import nickzim.model.RssFeed;
-import nickzim.model.database.RssFeedsBase;
+import nickzim.model.RssSource;
 import nickzim.model.dto.CategoryDto;
-import nickzim.model.dto.NewsFeed;
+import nickzim.model.NewsFeed;
 import nickzim.repositories.NewsFeedRepository;
 import nickzim.services.contracts.CategoryService;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Map<String,Integer> getAllForFeedUrl(String feedUrl) {
-        return new RssFeed(feedUrl).getCategoryList();
+        return new RssSource(feedUrl).getCategoryList();
     }
 
 
@@ -28,7 +27,7 @@ public class CategoryServiceImpl implements CategoryService {
 
         Map<String,Integer> categoriesMap = new HashMap<>();
         for (NewsFeed it: repository.findAll()){
-            categoriesMap.putAll(new RssFeed(it.getUrl()).getCategoryList());
+            categoriesMap.putAll(new RssSource(it.getUrl()).getCategoryList());
         }
         return categoriesMap;
 

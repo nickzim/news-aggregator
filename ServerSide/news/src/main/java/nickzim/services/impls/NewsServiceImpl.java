@@ -3,9 +3,8 @@ package nickzim.services.impls;
 
 import lombok.RequiredArgsConstructor;
 import nickzim.model.News;
-import nickzim.model.RssFeed;
-import nickzim.model.database.RssFeedsBase;
-import nickzim.model.dto.NewsFeed;
+import nickzim.model.NewsFeed;
+import nickzim.model.RssSource;
 import nickzim.repositories.NewsFeedRepository;
 import nickzim.services.contracts.NewsService;
 import org.springframework.stereotype.Service;
@@ -24,7 +23,7 @@ public class NewsServiceImpl implements NewsService {
 
         List<News> news = new ArrayList<>();
         for (NewsFeed it: repository.findAll()){
-            news.addAll(new RssFeed(it.getUrl()).getNewsList());
+            news.addAll(new RssSource(it.getUrl()).getNewsList());
         }
         return news;
     }
@@ -32,11 +31,11 @@ public class NewsServiceImpl implements NewsService {
     @Override
     public List<News> getAllFromFeed(String feedUrl) {
 
-        return new RssFeed(feedUrl).getNewsList();
+        return new RssSource(feedUrl).getNewsList();
     }
 
     @Override
     public List<News> getAllFromCategory(String feedUrl, String category) {
-        return new RssFeed(feedUrl).getNewsFromCategory(category);
+        return new RssSource(feedUrl).getNewsFromCategory(category);
     }
 }

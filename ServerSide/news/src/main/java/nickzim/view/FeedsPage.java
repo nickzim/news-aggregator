@@ -6,7 +6,7 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import lombok.RequiredArgsConstructor;
-import nickzim.model.dto.NewsFeed;
+import nickzim.model.NewsFeed;
 import nickzim.services.contracts.FeedsService;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;

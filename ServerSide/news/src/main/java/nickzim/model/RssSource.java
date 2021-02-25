@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class RssFeed {
+public class RssSource {
 
     private String name;
 
@@ -20,7 +20,7 @@ public class RssFeed {
 
     private Map<String,Integer> categoryMap;
 
-    public RssFeed(String feedUrl) {
+    public RssSource(String feedUrl) {
         try {
             feed = new URL(feedUrl);
         } catch (MalformedURLException e) {
@@ -28,7 +28,7 @@ public class RssFeed {
         }
     }
 
-    public RssFeed(String name, String feedUrl) {
+    public RssSource(String name, String feedUrl) {
         this.name = name;
         try {
             feed = new URL(feedUrl);

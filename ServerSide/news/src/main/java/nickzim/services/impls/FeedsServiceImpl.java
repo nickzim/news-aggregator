@@ -1,7 +1,7 @@
 package nickzim.services.impls;
 
 import lombok.RequiredArgsConstructor;
-import nickzim.model.dto.NewsFeed;
+import nickzim.model.NewsFeed;
 import nickzim.repositories.NewsFeedRepository;
 import org.springframework.stereotype.Service;
 

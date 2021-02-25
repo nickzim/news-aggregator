@@ -1,4 +1,4 @@
-package nickzim.model.dto;
+package nickzim.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,6 @@
 package nickzim.repositories;
 
-import nickzim.model.dto.NewsFeed;
+import nickzim.model.NewsFeed;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

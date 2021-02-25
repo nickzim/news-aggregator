@@ -1,7 +1,7 @@
 package nickzim.restapi;
 
 import lombok.RequiredArgsConstructor;
-import nickzim.model.dto.NewsFeed;
+import nickzim.model.NewsFeed;
 import nickzim.services.contracts.FeedsService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
