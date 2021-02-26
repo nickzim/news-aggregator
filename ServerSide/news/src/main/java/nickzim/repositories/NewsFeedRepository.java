@@ -9,4 +9,6 @@ public interface NewsFeedRepository extends JpaRepository<NewsFeed, Long> {
 
     @Override
     List<NewsFeed> findAll();
+
+    List<NewsFeed> findAllByLanguage(String language);
 }

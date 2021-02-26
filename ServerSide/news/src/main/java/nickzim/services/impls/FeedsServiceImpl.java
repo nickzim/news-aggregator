@@ -19,4 +19,9 @@ public class FeedsServiceImpl implements nickzim.services.contracts.FeedsService
         return repository.findAll();
     }
 
+    @Override
+    public List<NewsFeed> getAllFeedsByLanguage(String language) {
+        return repository.findAllByLanguage(language);
+    }
+
 }

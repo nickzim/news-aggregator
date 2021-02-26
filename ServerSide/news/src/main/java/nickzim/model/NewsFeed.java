@@ -26,6 +26,9 @@ public class NewsFeed {
     @Column (name = "url", nullable = false)
     private String url;
 
+    @Column (name = "language", nullable = false)
+    private String language;
+
 
 
 }
