@@ -1,5 +1,6 @@
 package nickzim.utils;
 
+import nickzim.enums.Charset;
 import nickzim.model.News;
 
 import java.io.BufferedReader;
@@ -22,13 +23,7 @@ public final class RssHandleUtils {
 
         List<News> newsList = new ArrayList<>();
 
-        String charset;
-
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream()))) {
-            charset = br.readLine().contains("windows-1251") ? "Windows-1251" : StandardCharsets.UTF_8.toString();
-        }
-
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream(), charset))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream(), getCharset(feed)))) {
 
             Pattern titlePattern = Pattern.compile("<title>.+</title>");
             Pattern linkPattern = Pattern.compile("<link>.+</link>");
@@ -94,5 +89,16 @@ public final class RssHandleUtils {
         }
 
         return categoriesMap;
+    }
+
+    private static String getCharset(URL feed) throws IOException{
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(feed.openStream()))) {
+            String charsetRssLine = br.readLine();
+            if (charsetRssLine.contains("windows-1251")) {
+                return Charset.WINDOWS_1251.getCharset();
+            } else {
+                return Charset.UTF_8.getCharset();
+            }
+        }
     }
 }

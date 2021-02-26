@@ -1,5 +1,7 @@
 package nickzim.model;
 
+import lombok.Getter;
+import lombok.Setter;
 import nickzim.utils.RssHandleUtils;
 
 import java.io.IOException;
@@ -10,6 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Getter
+@Setter
 public class RssSource {
 
     private String name;
@@ -27,24 +31,6 @@ public class RssSource {
             e.printStackTrace();
         }
     }
-
-    public RssSource(String name, String feedUrl) {
-        this.name = name;
-        try {
-            feed = new URL(feedUrl);
-        } catch (IOException exc) {
-            System.out.println(exc.getMessage());
-        }
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public URL getFeed() {
-        return feed;
-    }
-
 
     private void downloadRssData(){
 
