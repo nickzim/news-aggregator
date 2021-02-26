@@ -26,34 +26,28 @@ public class FeedsPage extends VerticalLayout {
 
     @PostConstruct
     public void init(){
-
-        Grid<NewsFeed> russianFeeds = new Grid<>(NewsFeed.class);
-        russianFeeds.setItems(service.getAllFeedsByLanguage("Russian"));
-        russianFeeds.getColumnByKey("name").setHeader("News source");
-        russianFeeds.removeColumnByKey("url");
-        russianFeeds.removeColumnByKey("id");
-        russianFeeds.removeColumnByKey("language");
-        russianFeeds.setHeightByRows(true);
-
-        Grid<NewsFeed> englishFeeds = new Grid<>(NewsFeed.class);
-        englishFeeds.setItems(service.getAllFeedsByLanguage("English"));
-        englishFeeds.getColumnByKey("name").setHeader("News source");
-        englishFeeds.removeColumnByKey("url");
-        englishFeeds.removeColumnByKey("id");
-        englishFeeds.removeColumnByKey("language");
-        englishFeeds.setHeightByRows(true);
-
-        russianFeeds.addItemClickListener(e -> UI.getCurrent().
-                navigate(CategoriesPage.class, e.getItem().getUrl().replaceAll("/","_")));
-
-        englishFeeds.addItemClickListener(e -> UI.getCurrent().
-                navigate(CategoriesPage.class, e.getItem().getUrl().replaceAll("/","_")));
-
+        
         add(new Label("Russian news agencies"));
-        add(russianFeeds);
+        add(createGrid("Russian"));
         add(new Label("World news agencies"));
-        add(englishFeeds);
+        add(createGrid("English"));
 
+    }
+
+    private Grid<NewsFeed> createGrid(String language){
+
+        Grid<NewsFeed> grid = new Grid<>(NewsFeed.class);
+        grid.setItems(service.getAllFeedsByLanguage(language));
+        grid.getColumnByKey("name").setHeader("News source");
+        grid.removeColumnByKey("url");
+        grid.removeColumnByKey("id");
+        grid.removeColumnByKey("language");
+        grid.setHeightByRows(true);
+
+        grid.addItemClickListener(e -> UI.getCurrent().
+                navigate(CategoriesPage.class, e.getItem().getUrl().replaceAll("/","_")));
+
+        return grid;
     }
 
 }
