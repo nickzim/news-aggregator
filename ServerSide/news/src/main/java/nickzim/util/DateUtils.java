@@ -1,11 +1,11 @@
-package nickzim.utils;
+package nickzim.util;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
-import static nickzim.utils.StringHandleUtils.handleString;
+import static nickzim.util.StringHandleUtils.handleString;
 
 public final class DateUtils {
 

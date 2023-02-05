@@ -1,4 +1,4 @@
-package nickzim.utils;
+package nickzim.util;
 
 import nickzim.enums.Charset;
 import nickzim.model.News;
@@ -7,7 +7,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static nickzim.utils.StringHandleUtils.handleString;
+import static nickzim.util.StringHandleUtils.handleString;
 
 public final class RssHandleUtils {
 

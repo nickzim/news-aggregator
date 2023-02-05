@@ -9,7 +9,7 @@ import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.Route;
 import lombok.RequiredArgsConstructor;
 import nickzim.model.News;
-import nickzim.services.contracts.NewsService;
+import nickzim.service.contract.NewsService;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

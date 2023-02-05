@@ -1,11 +1,11 @@
-package nickzim.services.impls;
+package nickzim.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import nickzim.model.RssSource;
 import nickzim.model.dto.CategoryDto;
 import nickzim.model.NewsFeed;
-import nickzim.repositories.NewsFeedRepository;
-import nickzim.services.contracts.CategoryService;
+import nickzim.repository.NewsFeedRepository;
+import nickzim.service.contract.CategoryService;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

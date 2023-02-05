@@ -1,4 +1,4 @@
-package nickzim.services.contracts;
+package nickzim.service.contract;
 
 import nickzim.model.News;
 

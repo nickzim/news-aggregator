@@ -9,7 +9,7 @@ import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.Route;
 import lombok.RequiredArgsConstructor;
 import nickzim.model.dto.CategoryDto;
-import nickzim.services.contracts.CategoryService;
+import nickzim.service.contract.CategoryService;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

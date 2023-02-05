@@ -1,9 +1,11 @@
-package nickzim.restapi;
+package nickzim.controller;
 
 import lombok.RequiredArgsConstructor;
 import nickzim.model.News;
-import nickzim.services.contracts.NewsService;
+import nickzim.service.contract.NewsService;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rest/news")
+@RequestMapping("/news")
 @RequiredArgsConstructor
 public class NewsController {
 
     private final NewsService newsService;
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<News> getAllNews(){
-        return newsService.getAll();
+    @GetMapping(value = "/all")
+    public ResponseEntity<List<News>> getAllNews(){
+        return ResponseEntity.ok(newsService.getAll());
     }
 }

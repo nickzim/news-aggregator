@@ -2,7 +2,7 @@ package nickzim.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import nickzim.utils.RssHandleUtils;
+import nickzim.util.RssHandleUtils;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

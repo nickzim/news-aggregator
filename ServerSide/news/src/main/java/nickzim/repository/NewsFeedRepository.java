@@ -1,4 +1,4 @@
-package nickzim.repositories;
+package nickzim.repository;
 
 import nickzim.model.NewsFeed;
 import org.springframework.data.jpa.repository.JpaRepository;

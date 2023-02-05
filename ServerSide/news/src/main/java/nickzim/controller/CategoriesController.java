@@ -1,7 +1,7 @@
-package nickzim.restapi;
+package nickzim.controller;
 
 import lombok.RequiredArgsConstructor;
-import nickzim.services.contracts.CategoryService;
+import nickzim.service.contract.CategoryService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

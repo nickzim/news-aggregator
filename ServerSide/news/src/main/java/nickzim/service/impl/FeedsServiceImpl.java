@@ -1,15 +1,15 @@
-package nickzim.services.impls;
+package nickzim.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import nickzim.model.NewsFeed;
-import nickzim.repositories.NewsFeedRepository;
+import nickzim.repository.NewsFeedRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class FeedsServiceImpl implements nickzim.services.contracts.FeedsService {
+public class FeedsServiceImpl implements nickzim.service.contract.FeedsService {
 
     private final NewsFeedRepository repository;
 
